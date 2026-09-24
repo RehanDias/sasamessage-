@@ -294,6 +294,52 @@ i.fa-solid,i.fa-brands{line-height:1}
 .bingo-actions{display:flex;flex-direction:column;align-items:center;gap:6px;margin-top:6px}
 .btn.dodge{transition:transform .28s cubic-bezier(.2,1.5,.4,1),box-shadow .12s}
 
+.rm-month{border:2px solid var(--ink);border-radius:var(--r-md);margin-bottom:12px;overflow:hidden;background:var(--paper)}
+.rm-head{width:100%;display:flex;align-items:center;gap:12px;padding:12px 14px;text-align:left;background:var(--lilac)}
+.rm-num{flex:none;width:34px;height:34px;border:2px solid var(--ink);border-radius:50%;background:var(--paper);display:grid;place-items:center;font-weight:800;font-size:.85rem}
+.rm-head b{font-size:1rem;line-height:1.3}
+.rm-head small{display:block;font-weight:600;font-size:.78rem;color:var(--deep)}
+.rm-chev{margin-left:auto;transition:transform .2s}
+.rm-month.open .rm-chev{transform:rotate(180deg)}
+.rm-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.rm-month.open .rm-body{max-height:400px}
+.rm-body ul{list-style:none;padding:14px;display:grid;gap:10px;font-size:.93rem;line-height:1.5;font-weight:500}
+.rm-body li{display:grid;grid-template-columns:auto 1fr;gap:10px}
+
+.game-round{font-weight:800;color:var(--paper);margin-bottom:14px}
+.skc-wrap{position:relative;width:230px;height:230px;margin:0 auto 22px;display:grid;place-items:center}
+.skc-ring{position:absolute;inset:0;border-radius:50%;border:4px solid var(--ink);box-shadow:var(--shadow);background:conic-gradient(from 0deg,var(--soft) 0deg var(--zone-start,120deg),var(--glow) var(--zone-start,120deg) var(--great-start,138deg),var(--magenta) var(--great-start,138deg) var(--great-end,150deg),var(--glow) var(--great-end,150deg) var(--zone-end,160deg),var(--soft) var(--zone-end,160deg) 360deg)}
+.skc-ring::after{content:"";position:absolute;inset:20px;border-radius:50%;background:var(--paper);border:3px solid var(--ink)}
+.skc-tick{position:absolute;top:6px;left:50%;width:4px;height:12px;margin-left:-2px;background:var(--ink);border-radius:2px}
+.skc-needle{position:absolute;left:50%;top:50%;width:5px;height:99px;margin-left:-2.5px;margin-top:-99px;transform-origin:50% 100%;background:linear-gradient(to bottom,var(--magenta),rgba(176,33,159,0));border-radius:4px;pointer-events:none;z-index:2;transform:rotate(0deg)}
+.skc-hit{position:relative;z-index:3;width:80px;height:80px;border-radius:50%;border:3px solid var(--ink);background:var(--glow);box-shadow:3px 3px 0 var(--ink);font-weight:800;font-size:.92rem;letter-spacing:.04em;transition:transform .1s,opacity .15s;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.skc-hit:disabled{opacity:.5;cursor:default}
+.skc-hit:active{transform:scale(.9)}
+.skc-idle{position:absolute;max-width:150px;text-align:center;font-weight:700;color:var(--lilac);font-size:.9rem}
+.skc-call{position:absolute;top:-8px;padding:4px 14px;border:2px solid var(--ink);border-radius:99px;background:var(--glow);font-weight:800;font-size:.85rem;animation:pop .25s ease both;z-index:4}
+.game-result{font-weight:700;color:var(--paper);max-width:340px;text-align:center}
+
+.journal-box{padding:16px;border:3px solid var(--ink);border-radius:var(--r-lg);background:var(--paper);box-shadow:var(--shadow);margin-bottom:6px}
+.journal-date{font-weight:800;color:var(--deep);margin-bottom:10px;font-size:.95rem}
+.journal-input{width:100%;min-height:92px;padding:12px;border:2px solid var(--ink);border-radius:var(--r-md);background:var(--soft);font:inherit;font-size:.98rem;line-height:1.5;color:var(--ink);resize:vertical}
+.journal-input:focus{outline:3px solid var(--glow);outline-offset:2px}
+.journal-actions{display:flex;align-items:center;gap:12px;margin-top:12px;flex-wrap:wrap}
+.journal-badge{display:inline-flex;align-items:center;gap:7px;padding:6px 13px;border:2px solid var(--ink);border-radius:99px;font-weight:800;font-size:.82rem;background:var(--lilac);color:var(--deep);transition:background .2s}
+.journal-badge.saved{background:var(--glow)}
+.journal-badge.unsaved{background:var(--rose);animation:nudge 1.2s ease-in-out infinite}
+.journal-board{position:relative;padding:22px 14px 16px;border:3px solid var(--ink);border-radius:var(--r-lg);background:var(--deep);background-image:radial-gradient(rgba(255,255,255,.1) 1.5px,transparent 1.8px);background-size:20px 20px;box-shadow:var(--shadow);margin-bottom:8px}
+.journal-board-mini{padding:18px 12px 12px}
+.journal-notes{display:grid;grid-template-columns:1fr;justify-items:start;gap:16px}
+.journal-note{position:relative;padding:14px 16px 12px;border-radius:4px;background:var(--paper);box-shadow:3px 5px 10px rgba(0,0,0,.35);font-size:.9rem;line-height:1.55;font-weight:600;color:var(--ink);width:-webkit-fit-content;width:fit-content;min-width:190px;max-width:100%}
+.journal-note:nth-child(odd){transform:rotate(-1.4deg)}
+.journal-note:nth-child(even){transform:rotate(1.3deg)}
+.journal-note.today{background:var(--glow);box-shadow:4px 6px 12px rgba(0,0,0,.4)}
+.journal-note .pin{position:absolute;top:-9px;left:50%;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:var(--magenta);border:2px solid var(--ink);box-shadow:0 2px 2px rgba(0,0,0,.35)}
+.journal-note b{display:inline-block;font-size:.68rem;color:var(--deep);margin-bottom:8px;font-weight:800;padding:2px 9px;border-radius:99px;background:var(--lilac)}
+.journal-note.today b{background:var(--paper)}
+.journal-note span{display:block;white-space:pre-wrap;word-break:break-word}
+.journal-note-empty{grid-column:1/-1;justify-self:stretch;width:100%;text-align:center;font-weight:700;color:var(--lilac);padding:18px 10px}
+
 #confetti{position:fixed;inset:0;width:100%;height:100%;z-index:60;pointer-events:none}
 
 @media(prefers-reduced-motion:reduce){
@@ -399,6 +445,29 @@ i.fa-solid,i.fa-brands{line-height:1}
         </div>
         <p class="count-note" id="countNote"></p>
       </div>
+    </div>
+  </section>
+
+  <section class="scene" data-id="roadmap" aria-label="Roadmap magang">
+    <div class="wrap">
+      <div class="head">
+        <span class="head-ic"><i class="fa-solid fa-route"></i></span>
+        <h2 class="title">Roadmap 6 bulan kamu</h2>
+        <p class="sub">udah aku rangkum dari kurikulum Promotion nya, biar kebayang perjalanannya kayak apa</p>
+      </div>
+      <div class="xp" style="text-align:left">
+        <div class="xp-top"><span><i class="fa-solid fa-road"></i><span>Progress magang</span></span><span id="progressLabel">hari ke-0 / 0</span></div>
+        <div class="xp-bar"><i id="progressFill"></i></div>
+        <p class="count-note" id="progressNote" style="margin-top:10px"></p>
+      </div>
+      <article class="patch">
+        <header class="patch-head">
+          <h3>Divisi Promotion, Batch 2</h3>
+          <p>13 materi, dari kenal department sampe jalan sendiri</p>
+        </header>
+        <div class="sec" id="roadmapList"></div>
+      </article>
+      <p class="hint">ga usah dihafal, ini cuma biar kamu ga kaget aja pas dikasih tugas. pelan-pelan, satu bulan satu langkah</p>
     </div>
   </section>
 
@@ -535,6 +604,69 @@ i.fa-solid,i.fa-brands{line-height:1}
     </div>
   </section>
 
+  <section class="scene" data-id="jurnal" aria-label="Jurnal harian">
+    <div class="wrap">
+      <div class="head">
+        <span class="head-ic"><i class="fa-solid fa-book-open"></i></span>
+        <h2 class="title">Jurnal kecil buat kamu</h2>
+        <p class="sub">satu kalimat aja tiap hari, buat kamu sendiri. ini tersimpan di HP kamu doang, aku beneran ga bisa baca ini</p>
+      </div>
+      <div class="journal-box">
+        <p class="journal-date" id="journalDate"></p>
+        <textarea id="journalInput" class="journal-input" maxlength="600" placeholder="hari ini gimana? tulis aja sebebasnya..."></textarea>
+        <div class="journal-actions">
+          <button class="btn primary" id="journalSave" type="button"><i class="fa-solid fa-floppy-disk"></i> Simpan</button>
+          <span class="journal-badge" id="journalStatus"><i class="fa-solid fa-circle-info"></i><span>Belum ada catatan hari ini</span></span>
+        </div>
+      </div>
+      <div class="journal-board journal-board-mini">
+        <div class="journal-notes" id="journalPreview"></div>
+      </div>
+      <p class="hint"><i class="fa-solid fa-arrow-right"></i> ini baru preview punya hari ini. koleksi lengkap semua catatan kamu ada di papan jurnal, geser lanjut yaa</p>
+    </div>
+  </section>
+
+  <section class="scene" data-id="papan" aria-label="Papan jurnal">
+    <div class="wrap">
+      <div class="head">
+        <span class="head-ic"><i class="fa-solid fa-thumbtack"></i></span>
+        <h2 class="title">Papan jurnal kamu</h2>
+        <p class="sub">kumpulan semua catatan yang udah kamu simpan. cuma keliatan di HP ini, ga ke-upload ke mana-mana</p>
+      </div>
+      <div class="journal-board">
+        <div class="journal-notes" id="journalNotes"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene" data-id="game" aria-label="Mini game">
+    <div class="wrap center">
+      <div class="head">
+        <span class="head-ic"><i class="fa-solid fa-bullseye"></i></span>
+        <h2 class="title">Skill Check!</h2>
+        <p class="sub">kaya skill check DBD: tap pas jarumnya lewat zona berwarna. 10 ronde, makin lama makin cepet</p>
+      </div>
+      <div class="xp" style="text-align:left">
+        <div class="xp-top"><span><i class="fa-solid fa-bolt"></i><span>Skor</span></span><span id="gameScore">0</span></div>
+        <div class="xp-top" style="margin-bottom:0"><span><i class="fa-solid fa-fire"></i><span>Combo</span></span><span id="gameCombo">x0</span></div>
+      </div>
+      <p class="game-round" id="gameRound">ronde 0/10</p>
+      <div class="skc-wrap" id="skcWrap">
+        <div class="skc-ring" id="skcRing"></div>
+        <div class="skc-tick"></div>
+        <div class="skc-needle" id="skcNeedle"></div>
+        <button class="skc-hit" id="skcHit" type="button" hidden>TAP</button>
+        <p class="skc-idle" id="skcIdle">tekan mulai buat main</p>
+        <span class="skc-call" id="skcCall" hidden></span>
+      </div>
+      <div class="bingo-actions">
+        <button class="btn primary" id="gameStart" type="button"><i class="fa-solid fa-play"></i> Mulai main</button>
+        <p class="game-result" id="gameResult" hidden></p>
+        <a class="btn" id="gameWa" href="#" target="_blank" rel="noopener" hidden><i class="fa-brands fa-whatsapp"></i> Pamer skor ke Dias</a>
+      </div>
+    </div>
+  </section>
+
   <section class="scene" data-id="finale" aria-label="Penutup">
     <div class="wrap center">
       <div class="head">
@@ -545,10 +677,10 @@ i.fa-solid,i.fa-brands{line-height:1}
       <div class="coupon" id="coupon">
         <div class="coupon-top">
           <i class="fa-solid fa-ticket"></i>
-          <h3>Kupon: 1x cerita hari pertama</h3>
+          <h3 id="couponTitle">Kupon: 1x cerita hari pertama</h3>
         </div>
         <div class="perf"></div>
-        <p>berlaku selamanya, tanpa minimal cerita. cerita yang receh juga boleh, apalagi yang receh.</p>
+        <p>berlaku sampai hari terakhir magang kamu, tanpa minimal cerita. cerita yang receh juga boleh, apalagi yang receh.</p>
         <p class="code">kode: CERITA-HARI-1</p>
         <span class="claimed-stamp" id="claimedStamp" hidden>DIKLAIM</span>
       </div>
@@ -612,9 +744,11 @@ i.fa-solid,i.fa-brands{line-height:1}
 (() => {
   const CONFIG = {
     START: "2026-09-21T08:00:00+07:00",
+    PROGRAM_MONTHS: 6,
     WA_NUMBER: "+6287777766361",
     WA_TEXT: "Dias, aku klaim kupon cerita hari pertama yaa 💜",
     WA_BINGO_TEXT: "Dias, bingo hari pertamaku udah jadi nih!",
+    WA_GAME_TEXT: "Dias, aku baru menang mini game Sat-Set Tugas nih kwkw",
     PHOTO: "",
     MUSIC: "https://raw.githubusercontent.com/RehanDias/sasamessage-/main/yettocome.mp3",
     LETTER_HOURS: { pagi: -3, minggu: 120 }
@@ -626,8 +760,37 @@ i.fa-solid,i.fa-brands{line-height:1}
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const startDate = new Date(CONFIG.START);
+  const endDate = new Date(startDate);
+  endDate.setMonth(endDate.getMonth() + CONFIG.PROGRAM_MONTHS);
   const fullDate = new Intl.DateTimeFormat("id-ID", { weekday: "long", day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Jakarta" }).format(startDate);
+  const fullEndDate = new Intl.DateTimeFormat("id-ID", { day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Jakarta" }).format(endDate);
+  function jakartaDateOnly(d) {
+    const key = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Jakarta" }).format(d);
+    return new Date(key + "T00:00:00");
+  }
+  const startDayOnly = jakartaDateOnly(startDate);
+  function workdayNumber(now) {
+    const today = jakartaDateOnly(now);
+    if (today < startDayOnly) return 0;
+    let count = 0;
+    const d = new Date(startDayOnly);
+    while (d <= today) {
+      const wd = d.getDay();
+      if (wd !== 0 && wd !== 6) count++;
+      d.setDate(d.getDate() + 1);
+    }
+    return count;
+  }
   $("#idDate").textContent = "Berlaku mulai " + fullDate;
+  const couponP = $("#coupon p:not(.code)");
+  if (couponP) couponP.textContent = "berlaku sampai hari terakhir magang, " + fullEndDate + ". tanpa minimal cerita, yang receh malah lebih seru.";
+  const couponTitle = $("#couponTitle");
+  const couponCode = $("#coupon .code");
+  {
+    const dn = workdayNumber(new Date());
+    if (couponTitle) couponTitle.textContent = dn > 0 ? "Kupon: 1x cerita hari ke-" + dn : "Kupon: 1x cerita hari pertama";
+    if (couponCode) couponCode.textContent = "kode: CERITA-HARI-" + (dn > 0 ? dn : "1") + (dn > 0 ? " (dihitung Senin–Jumat)" : "");
+  }
   if (CONFIG.PHOTO) {
     const ph = $(".photo");
     ph.style.backgroundImage = 'url("' + CONFIG.PHOTO + '")';
@@ -829,6 +992,7 @@ i.fa-solid,i.fa-brands{line-height:1}
       from.classList.remove("leaving");
       to.classList.remove("enter");
       busy = false;
+      if (from.dataset.id === "game" && typeof stopGameQuiet === "function") stopGameQuiet();
       if (hooks[ids[n]]) hooks[ids[n]]();
     };
     if (reduce) {
@@ -1098,6 +1262,8 @@ i.fa-solid,i.fa-brands{line-height:1}
     "kalo nanti ada hari yang capek atau ga sesuai rencana, isokeyy. u dont have to figure everything out on day one. doing ur best doesnt always mean pushing urself until ure exhausted, sometimes ur best is knowing when to rest",
     "dan buat lipe nya, tenang aja, no pressure. atur pelan-pelan, yang penting kamu nyaman dan ga kepaksa",
     "i hope u know, u deserve the same kindness that u keep giving to everyone else. jangan lupa bilang ke diri sendiri juga yaa, u did great",
+    "aku sempet liat gambaran kurikulumnya, dari ngatur budget, bikin PO, sampe koordinasi event dan vendor. keliatan banyak, tapi semua itu bakal dikasih pelan-pelan, satu bulan satu langkah, bukan langsung disuruh jago semua hari pertama",
+    "jadi kalo ada bulan yang berasa berat, inget lagi ini: kamu ga lagi ketinggalan, kamu lagi di tahap yang emang seharusnya. progress itu ga harus keliatan cepet biar tetep dihitung progress",
     "semoga kantornya nyaman, orang-orangnya baik, ilmunya banyak, semuanya lancar (aamiin paling kenceng), dan pas pulang badannya ga terlalu remuk. nanti kalo udah pulang dan sempet, cerita yaa, aku pengen denger hari pertamanya gimana 💜",
     "im really proud of uuu ka saa. semangattt! — Dias"
   ];
@@ -1160,9 +1326,17 @@ i.fa-solid,i.fa-brands{line-height:1}
     sfx.stamp();
     sfx.win();
     burstAt($("#coupon"), 170, 1.2);
+    const dayNum = workdayNumber(new Date());
+    const waText = dayNum > 0
+      ? "Dias, aku klaim kupon cerita hari ke-" + dayNum + " yaa 💜"
+      : CONFIG.WA_TEXT;
+    const note = $("#claimNote");
+    if (dayNum > 0) {
+      note.childNodes[0].textContent = "oke noted, hari ke-" + dayNum + " (Senin–Jumat) yaa. kabarin aku pas udah pulang dan sempet, aku siap dengerin ";
+    }
     if (CONFIG.WA_NUMBER) {
       const wa = $("#waBtn");
-      wa.href = "https://wa.me/" + CONFIG.WA_NUMBER.replace(/\D/g, "") + "?text=" + encodeURIComponent(CONFIG.WA_TEXT);
+      wa.href = "https://wa.me/" + CONFIG.WA_NUMBER.replace(/\D/g, "") + "?text=" + encodeURIComponent(waText);
       wa.hidden = false;
     }
   });
@@ -1188,7 +1362,7 @@ i.fa-solid,i.fa-brands{line-height:1}
   const MAILS = [
     { i: "fa-sun", t: "Buka pagi hari pertama", at: startMs + CONFIG.LETTER_HOURS.pagi * 36e5, hint: "udah bisa dibuka", m: "pagiii ka saa, ini harinya!! tarik napas dulu, minum air, cek lagi berkas dan ID nya. hari ini boleh deg-degan, boleh salah dikit, boleh banyak nanya. kamu ada di sana karena kamu emang pantes, bukan karena keberuntungan doang. sometimes courage is just doing it while ur heart is still beating a little faster. semangattt yaa, aku doain dari jauh. — Dias" },
     { i: "fa-battery-quarter", t: "Buka kalo lagi capek", at: 0, hint: "buka pas beneran lagi capek yaa, jangan sekarang kwkw", m: "kalo kamu lagi baca ini, berarti lagi capek. gapapa banget. tarik napas, minum air, duduk sebentar. capek itu tandanya kamu udah berusaha, bukan tandanya kamu kurang kuat. sometimes resting is also part of moving forward, dan doing ur best doesnt always mean pushing urself until ure exhausted. pelan-pelan aja ka saa, kamu ga harus sempurna, cukup terus jalan. — Dias" },
-    { i: "fa-medal", t: "Buka pas minggu pertama kelar", at: startMs + CONFIG.LETTER_HOURS.minggu * 36e5, hint: "udah bisa dibuka", m: "selamattt, minggu pertama kelar!! kamu udah ngelewatin bagian yang paling bikin deg-degan: serba pertama kali. sekarang tempatnya udah ga terlalu asing kan? kalo ada cerita seru, atau yang bikin kaget, atau yang receh, kupon cerita hari pertama masih berlaku selamanya kwkw. im proud of u, ka saa. — Dias" }
+    { i: "fa-medal", t: "Buka pas minggu pertama kelar", at: startMs + CONFIG.LETTER_HOURS.minggu * 36e5, hint: "udah bisa dibuka", m: "selamattt, minggu pertama kelar!! kamu udah ngelewatin bagian yang paling bikin deg-degan: serba pertama kali. sekarang tempatnya udah ga terlalu asing kan? kalo ada cerita seru, atau yang bikin kaget, atau yang receh, kupon cerita hari pertama masih berlaku sampe hari terakhir magang kamu kwkw, jadi ga usah buru-buru. im proud of u, ka saa. — Dias" }
   ];
   const whenFmt = new Intl.DateTimeFormat("id-ID", { weekday: "long", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit", timeZone: "Asia/Jakarta" });
   const mailList = $("#mails");
@@ -1518,6 +1692,343 @@ i.fa-solid,i.fa-brands{line-height:1}
   });
   paintBingo();
 
+  const ROADMAP = [
+    { m: "Bulan 1", t: "Kenalan sama department", items: ["Kenal tugas dan bidang kerja department Promotion", "Belajar rekap & monitoring budget promosi sesuai alokasi", "Mulai kelola administrasi: pengarsipan dokumen, surat, proposal, kontrak", "Bikin & pantau PR/PO, invoice, sampai proses pembayaran vendor"] },
+    { m: "Bulan 2", t: "Mulai pegang event", items: ["Bantu perizinan, koordinasi, dan persiapan event, pameran, aktivasi", "Kelola database vendor, media partner, dan sponsor"] },
+    { m: "Bulan 3", t: "Jalanin event end-to-end", items: ["Handle promosi dari perizinan sampai pelaksanaan program", "Koordinasi sama tim internal & eksternal biar acara lancar", "Susun laporan kegiatan, evaluasi event, dan dokumentasi pendukung"] },
+    { m: "Bulan 4", t: "Rapiin operasional", items: ["Kelola inventaris material promosi, merchandise, perlengkapan event", "Monitoring jadwal pemasangan materi promosi & media placement"] },
+    { m: "Bulan 5", t: "Evaluasi & rapi-rapi data", items: ["Evaluasi kerja yang udah dijalanin", "Susun laporan administrasi & input data berkala"] },
+    { m: "Bulan 6", t: "Udah jalan sendiri", items: ["Kegiatan administrasi divisi Marketing Promotion secara mandiri", "Siap-siap wisuda magang dengan segudang cerita"] }
+  ];
+  const rmList = $("#roadmapList");
+  ROADMAP.forEach((r, i) => {
+    const d = document.createElement("div");
+    d.className = "rm-month";
+    d.innerHTML = '<button type="button" class="rm-head"><span class="rm-num"></span><span><b></b><small></small></span><i class="fa-solid fa-chevron-down rm-chev"></i></button><div class="rm-body"><ul></ul></div>';
+    $(".rm-num", d).textContent = i + 1;
+    $("b", d).textContent = r.m + " — " + r.t;
+    const ul = $("ul", d);
+    r.items.forEach(it => {
+      const li = document.createElement("li");
+      li.innerHTML = '<span class="g add"><i class="fa-solid fa-check"></i></span><span></span>';
+      li.lastElementChild.textContent = it;
+      ul.appendChild(li);
+    });
+    $(".rm-head", d).addEventListener("click", () => {
+      const open = d.classList.toggle("open");
+      sfx.tick();
+      if (open) d.querySelector(".rm-body").style.maxHeight = ul.scrollHeight + 40 + "px";
+    });
+    rmList.appendChild(d);
+  });
+
+  const totalWorkdays = workdayNumber(endDate);
+  const doneWorkdays = Math.max(0, Math.min(workdayNumber(new Date()), totalWorkdays));
+  const progressFill = $("#progressFill");
+  const progressLabel = $("#progressLabel");
+  const progressNote = $("#progressNote");
+  if (progressFill && progressLabel && progressNote) {
+    const pct = totalWorkdays > 0 ? (doneWorkdays / totalWorkdays) * 100 : 0;
+    progressFill.style.width = pct + "%";
+    progressLabel.textContent = "hari ke-" + doneWorkdays + " / " + totalWorkdays;
+    if (Date.now() < startDate.getTime()) progressNote.textContent = "belum mulai, ini baru gambaran totalnya yaa";
+    else if (doneWorkdays >= totalWorkdays) progressNote.textContent = "wah udah kelar semua hari kerjanya. gimana rasanya, ka saa?";
+    else progressNote.textContent = "udah jalan " + Math.round(pct) + "% dari total magang kamu (dihitung Senin–Jumat)";
+  }
+
+  const journalDateEl = $("#journalDate");
+  const journalInput = $("#journalInput");
+  const journalSave = $("#journalSave");
+  const journalStatus = $("#journalStatus");
+  const journalNotes = $("#journalNotes");
+  const journalPreview = $("#journalPreview");
+  const JOURNAL_PREFIX = "ksa-journal:";
+  function todayKeyJakarta() { return new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Jakarta" }).format(new Date()); }
+  function journalDayLabel(dateStr) {
+    const d = new Date(dateStr + "T00:00:00");
+    return new Intl.DateTimeFormat("id-ID", { weekday: "long", day: "numeric", month: "long", timeZone: "Asia/Jakarta" }).format(d);
+  }
+  function journalGet(key) {
+    try { return localStorage.getItem(key) || ""; } catch (e) { return ""; }
+  }
+  function journalSet(key, val) {
+    try { localStorage.setItem(key, val); return true; } catch (e) { return false; }
+  }
+  function setJournalBadge(state) {
+    journalStatus.classList.remove("saved", "unsaved");
+    const icon = journalStatus.querySelector("i");
+    const label = journalStatus.querySelector("span");
+    if (state === "saved") {
+      journalStatus.classList.add("saved");
+      icon.className = "fa-solid fa-circle-check";
+      label.textContent = "Tersimpan ✓";
+    } else if (state === "unsaved") {
+      journalStatus.classList.add("unsaved");
+      icon.className = "fa-solid fa-pen";
+      label.textContent = "Ada perubahan, klik Simpan";
+    } else {
+      icon.className = "fa-solid fa-circle-info";
+      label.textContent = "Belum ada catatan hari ini";
+    }
+  }
+  function renderJournalBoard() {
+    let keys = [];
+    try {
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && k.indexOf(JOURNAL_PREFIX) === 0) keys.push(k);
+      }
+    } catch (e) {}
+    keys.sort().reverse();
+    journalNotes.innerHTML = "";
+    let shown = 0;
+    keys.forEach(k => {
+      const val = journalGet(k);
+      if (!val.trim()) return;
+      const dateStr = k.slice(JOURNAL_PREFIX.length);
+      const isToday = dateStr === todayKeyJakarta();
+      const note = document.createElement("div");
+      note.className = "journal-note" + (isToday ? " today" : "");
+      note.innerHTML = '<span class="pin"></span><b></b><span></span>';
+      $("b", note).textContent = isToday ? "Hari ini" : journalDayLabel(dateStr);
+      $("span:last-child", note).textContent = val;
+      journalNotes.appendChild(note);
+      shown++;
+    });
+    if (!shown) {
+      const empty = document.createElement("p");
+      empty.className = "journal-note-empty";
+      empty.textContent = "papannya masih kosong, tulis catatan pertama kamu yuk";
+      journalNotes.appendChild(empty);
+    }
+  }
+  function renderJournalPreview() {
+    const key = todayKeyJakarta();
+    const val = journalGet(JOURNAL_PREFIX + key);
+    journalPreview.innerHTML = "";
+    if (val && val.trim()) {
+      const note = document.createElement("div");
+      note.className = "journal-note today";
+      note.innerHTML = '<span class="pin"></span><b>Hari ini</b><span></span>';
+      $("span:last-child", note).textContent = val;
+      journalPreview.appendChild(note);
+    } else {
+      const empty = document.createElement("p");
+      empty.className = "journal-note-empty";
+      empty.textContent = "belum ada catatan hari ini, tulis dulu di atas yuk";
+      journalPreview.appendChild(empty);
+    }
+  }
+  function initJournal() {
+    const key = todayKeyJakarta();
+    journalDateEl.textContent = "Hari ini, " + journalDayLabel(key);
+    const val = journalGet(JOURNAL_PREFIX + key);
+    journalInput.value = val;
+    setJournalBadge(val ? "saved" : "empty");
+    renderJournalPreview();
+  }
+  journalInput.addEventListener("input", () => setJournalBadge("unsaved"));
+  journalSave.addEventListener("click", () => {
+    const key = JOURNAL_PREFIX + todayKeyJakarta();
+    if (journalSet(key, journalInput.value)) {
+      setJournalBadge(journalInput.value ? "saved" : "empty");
+      sfx.pop();
+      burstAt(journalSave, 20, .4);
+      renderJournalPreview();
+      renderJournalBoard();
+    } else {
+      journalStatus.classList.remove("saved", "unsaved");
+      journalStatus.querySelector("i").className = "fa-solid fa-triangle-exclamation";
+      journalStatus.querySelector("span").textContent = "gagal nyimpen, coba lagi yaa";
+    }
+  });
+
+  const skcWrap = $("#skcWrap");
+  const skcRing = $("#skcRing");
+  const skcNeedle = $("#skcNeedle");
+  const skcHit = $("#skcHit");
+  const skcIdle = $("#skcIdle");
+  const skcCall = $("#skcCall");
+  const gameStart = $("#gameStart");
+  const gameScoreEl = $("#gameScore");
+  const gameComboEl = $("#gameCombo");
+  const gameRoundEl = $("#gameRound");
+  const gameResult = $("#gameResult");
+  const gameWa = $("#gameWa");
+  const TOTAL_ROUNDS = 10;
+  let gameRunning = false;
+  let gameRound = 0;
+  let score = 0;
+  let combo = 0;
+  let roundStart = 0;
+  let roundMs = 1800;
+  let roundTimer = 0;
+  let roundHit = false;
+  let zoneStart = 0;
+  let zoneEnd = 0;
+  let greatStart = 0;
+  let greatEnd = 0;
+  let gameRaf = 0;
+  let currentAngle = 0;
+  let startAngle = 0;
+  let direction = 1;
+  let lastZoneCenter = null;
+
+  function norm360(a) { return ((a % 360) + 360) % 360; }
+
+  function tickNeedle() {
+    if (!gameRunning || roundHit) { gameRaf = 0; return; }
+    const elapsed = performance.now() - roundStart;
+    const travel = Math.min(elapsed / roundMs, 1) * 360;
+    currentAngle = norm360(startAngle + direction * travel);
+    skcNeedle.style.transform = "rotate(" + currentAngle + "deg)";
+    gameRaf = requestAnimationFrame(tickNeedle);
+  }
+
+  function callOut(text) {
+    skcCall.textContent = text;
+    skcCall.hidden = false;
+    skcCall.style.animation = "none";
+    void skcCall.offsetWidth;
+    skcCall.style.animation = "";
+    clearTimeout(callOut._t);
+    callOut._t = setTimeout(() => { skcCall.hidden = true; }, 650);
+  }
+
+  function angDist(a, b) {
+    const d = Math.abs(a - b) % 360;
+    return d > 180 ? 360 - d : d;
+  }
+
+  function nextRound() {
+    if (!gameRunning) return;
+    gameRound++;
+    if (gameRound > TOTAL_ROUNDS) { finishGame(); return; }
+    gameRoundEl.textContent = "ronde " + gameRound + "/" + TOTAL_ROUNDS;
+    roundHit = false;
+    skcHit.disabled = false;
+    roundMs = Math.max(700, 1750 - gameRound * 95 - Math.random() * 80);
+    const zoneWidth = Math.max(24, 80 - gameRound * 5 - Math.random() * 8);
+    const greatWidth = Math.max(9, zoneWidth * 0.32);
+    let zoneCenter;
+    let tries = 0;
+    do {
+      zoneStart = Math.random() * (360 - zoneWidth);
+      zoneCenter = zoneStart + zoneWidth / 2;
+      tries++;
+    } while (lastZoneCenter !== null && angDist(zoneCenter, lastZoneCenter) < 70 && tries < 10);
+    lastZoneCenter = zoneCenter;
+    zoneEnd = zoneStart + zoneWidth;
+    const margin = Math.min(5, Math.max(0, (zoneWidth - greatWidth) / 2));
+    const span = Math.max(0, zoneWidth - greatWidth - margin * 2);
+    greatStart = zoneStart + margin + Math.random() * span;
+    greatEnd = greatStart + greatWidth;
+    skcRing.style.setProperty("--zone-start", zoneStart + "deg");
+    skcRing.style.setProperty("--zone-end", zoneEnd + "deg");
+    skcRing.style.setProperty("--great-start", greatStart + "deg");
+    skcRing.style.setProperty("--great-end", greatEnd + "deg");
+    direction = Math.random() < 0.5 ? 1 : -1;
+    startAngle = currentAngle;
+    roundStart = performance.now();
+    cancelAnimationFrame(gameRaf);
+    gameRaf = requestAnimationFrame(tickNeedle);
+    clearTimeout(roundTimer);
+    roundTimer = setTimeout(() => { if (!roundHit) registerHit(roundMs); }, roundMs + 160);
+  }
+
+  function registerHit(elapsed) {
+    if (roundHit || !gameRunning) return;
+    roundHit = true;
+    skcHit.disabled = true;
+    clearTimeout(roundTimer);
+    cancelAnimationFrame(gameRaf);
+    const travel = (Math.min(elapsed, roundMs) / roundMs) * 360;
+    const angle = norm360(startAngle + direction * travel);
+    currentAngle = angle;
+    skcNeedle.style.transform = "rotate(" + angle + "deg)";
+    let tier, pts;
+    if (angle >= greatStart && angle <= greatEnd) { tier = "GREAT!"; pts = 30; combo++; }
+    else if (angle >= zoneStart && angle <= zoneEnd) { tier = "GOOD"; pts = 15; combo++; }
+    else { tier = "MELESET"; pts = 0; combo = 0; }
+    const bonus = pts ? Math.min(combo, 8) * 2 : 0;
+    score += pts + bonus;
+    gameScoreEl.textContent = score;
+    gameComboEl.textContent = "x" + combo;
+    callOut(tier + (pts ? " +" + (pts + bonus) : ""));
+    if (pts) {
+      sfx.pop();
+      burstAt(skcWrap, tier === "GREAT!" ? 26 : 14, .5);
+      if (navigator.vibrate && !reduce) navigator.vibrate(tier === "GREAT!" ? [18, 30, 18] : 16);
+    } else {
+      sfx.flip();
+      if (navigator.vibrate && !reduce) navigator.vibrate(60);
+    }
+    setTimeout(nextRound, 480);
+  }
+
+  skcHit.addEventListener("click", () => {
+    if (!gameRunning || roundHit) return;
+    registerHit(performance.now() - roundStart);
+  });
+  addEventListener("keydown", e => {
+    if (e.code !== "Space" || !gameRunning || roundHit) return;
+    if (ids[idx] !== "game") return;
+    e.preventDefault();
+    registerHit(performance.now() - roundStart);
+  });
+
+  function finishGame() {
+    gameRunning = false;
+    clearTimeout(roundTimer);
+    cancelAnimationFrame(gameRaf);
+    skcHit.hidden = true;
+    skcIdle.hidden = false;
+    skcIdle.textContent = "udah selesai, cek skor kamu";
+    gameStart.hidden = false;
+    gameStart.textContent = "Main lagi";
+    let line = "lumayan buat pemanasan, nanti di kantor juga makin sat-set kok.";
+    if (score >= 260) line = "GILA SKILL CHECK BANGET. kamu bakal jago banget kerja di bawah tekanan kwkwk";
+    else if (score >= 160) line = "mantappp, reflex kamu udah oke banget hehe";
+    gameResult.hidden = false;
+    gameResult.textContent = "Skor akhir: " + score + ". " + line;
+    sfx.win();
+    burstAt(skcWrap, 60, .8);
+    if (CONFIG.WA_NUMBER) {
+      gameWa.href = "https://wa.me/" + CONFIG.WA_NUMBER.replace(/\D/g, "") + "?text=" + encodeURIComponent(CONFIG.WA_GAME_TEXT + " skornya " + score + "!");
+      gameWa.hidden = false;
+    }
+  }
+
+  function stopGameQuiet() {
+    if (!gameRunning) return;
+    gameRunning = false;
+    clearTimeout(roundTimer);
+    cancelAnimationFrame(gameRaf);
+    skcHit.hidden = true;
+    skcIdle.hidden = false;
+    gameStart.hidden = false;
+    gameStart.textContent = "Main lagi";
+  }
+
+  gameStart.addEventListener("click", () => {
+    skcIdle.hidden = true;
+    skcHit.hidden = false;
+    skcHit.disabled = false;
+    gameResult.hidden = true;
+    gameWa.hidden = true;
+    gameStart.hidden = true;
+    score = 0;
+    combo = 0;
+    gameRound = 0;
+    currentAngle = 0;
+    lastZoneCenter = null;
+    skcNeedle.style.transform = "rotate(0deg)";
+    gameScoreEl.textContent = "0";
+    gameComboEl.textContent = "x0";
+    gameRunning = true;
+    nextRound();
+  });
+
   let stampedOnce = false;
   let chatOnce = false;
   let rainOnce = false;
@@ -1529,6 +2040,12 @@ i.fa-solid,i.fa-brands{line-height:1}
     },
     surat() {
       refreshMails();
+    },
+    jurnal() {
+      initJournal();
+    },
+    papan() {
+      renderJournalBoard();
     },
     letter() {
       if (chatOnce) return;
