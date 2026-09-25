@@ -593,8 +593,8 @@ i.fa-solid,i.fa-brands{line-height:1}
           <small>ramalan ini 100% ilmiah (menurut Dias)</small>
         </div>
       </div>
-      <h3 class="sec-title">Bingo hari pertama</h3>
-      <p class="sub">tap kotak yang beneran kejadian. dapet satu garis = BINGO!</p>
+      <h3 class="sec-title">Bingo <span id="bingoDayLabel">hari pertama</span></h3>
+      <p class="sub">diacak khusus buat hari ini, beda tiap hari. tap kotak yang beneran kejadian, dapet satu garis = BINGO!</p>
       <div class="bingo" id="bingo"></div>
       <p class="bingo-msg" id="bingoMsg" role="status">belum ada garis, santai aja kwkw</p>
       <div class="bingo-actions">
@@ -1631,29 +1631,66 @@ i.fa-solid,i.fa-brands{line-height:1}
     burstAt(card, 70, .7);
   });
 
-  const BINGO = ["Nyasar cari ruangan", "Lupa nama orang baru", "Bilang \"baik, siap\" padahal bingung", "Makan siang enak banget", "Berhasil dateng!", "Ketemu orang baik", "Ngantuk jam 2 siang", "Nanya 3x atau lebih", "Pulang langsung rebahan"];
+  const BINGO_POOL = [
+    "Nyasar cari ruangan", "Lupa nama orang baru", "Bilang \"baik, siap\" padahal bingung", "Makan siang enak banget",
+    "Berhasil dateng!", "Ketemu orang baik", "Ngantuk jam 2 siang", "Nanya 3x atau lebih", "Pulang langsung rebahan",
+    "Dikasih tugas pertama", "Ikut meeting pertama kali", "Denger istilah kantor yang baru", "Difoto buat dokumentasi",
+    "Bantu-bantu persiapan event", "Ngecek budget atau PO", "Ketemu vendor/sponsor", "Nemu snack gratis",
+    "Salah pencet lift/pintu", "Dipuji sama atasan", "Telat dikit tapi aman", "Diajak ngobrol duluan",
+    "Ikutan grup chat kantor", "Nemu spot enak buat istirahat", "Ngerjain laporan sampe kelar", "Nolongin temen kerja",
+    "Ketawa gara-gara hal receh", "Baju masih rapi sampe pulang", "Nyoba kerjaan yang belum pernah dicoba"
+  ];
   const LINES = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
   const store = {
     get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
     set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
   };
-  let marks = new Set([4]);
-  try { JSON.parse(store.get("ksa-bingo") || "[]").forEach(i => { if (i >= 0 && i < 9) marks.add(i); }); } catch (e) {}
   const bingoGrid = $("#bingo");
-  const cells = BINGO.map((t, i) => {
-    const b = document.createElement("button");
-    b.type = "button";
-    b.className = "bcell" + (i === 4 ? " free" : "");
-    b.textContent = t;
-    b.addEventListener("click", () => toggleCell(i));
-    bingoGrid.appendChild(b);
-    return b;
-  });
-  const fullLines = () => LINES.filter(l => l.every(i => marks.has(i)));
-  let lastLines = fullLines().length;
-  if (CONFIG.WA_NUMBER) {
-    $("#bingoWa").href = "https://wa.me/" + CONFIG.WA_NUMBER.replace(/\D/g, "") + "?text=" + encodeURIComponent(CONFIG.WA_BINGO_TEXT);
+  const bingoDayLabel = $("#bingoDayLabel");
+  let bingoTodayKey = "";
+  let bingoItems = [];
+  let bingoStorageKey = "ksa-bingo";
+  let marks = new Set([4]);
+  let cells = [];
+  let lastLines = 0;
+
+  function shuffledForDay(dateKey) {
+    const rnd = seeded(hashStr("ksa-bingo-pool-" + dateKey));
+    const pool = BINGO_POOL.slice();
+    for (let i = pool.length - 1; i > 0; i--) {
+      const j = Math.floor(rnd() * (i + 1));
+      [pool[i], pool[j]] = [pool[j], pool[i]];
+    }
+    const picked = pool.slice(0, 8);
+    picked.splice(4, 0, "FREE — kamu udah di sini");
+    return picked;
   }
+
+  function buildBingoForToday() {
+    const dateKey = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Jakarta" }).format(new Date());
+    if (dateKey === bingoTodayKey) return;
+    bingoTodayKey = dateKey;
+    bingoStorageKey = "ksa-bingo:" + dateKey;
+    bingoItems = shuffledForDay(dateKey);
+    const dn = workdayNumber(new Date());
+    bingoDayLabel.textContent = dn > 0 ? "hari ke-" + dn : "hari pertama";
+    marks = new Set([4]);
+    try { JSON.parse(store.get(bingoStorageKey) || "[]").forEach(i => { if (i >= 0 && i < 9) marks.add(i); }); } catch (e) {}
+    bingoGrid.innerHTML = "";
+    cells = bingoItems.map((t, i) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "bcell" + (i === 4 ? " free" : "");
+      b.textContent = t;
+      b.addEventListener("click", () => toggleCell(i));
+      bingoGrid.appendChild(b);
+      return b;
+    });
+    lastLines = fullLines().length;
+    paintBingo();
+  }
+
+  const fullLines = () => LINES.filter(l => l.every(i => marks.has(i)));
   function paintBingo() {
     const full = fullLines();
     const inLine = new Set(full.flat());
@@ -1664,17 +1701,22 @@ i.fa-solid,i.fa-brands{line-height:1}
     });
     const n = full.length;
     const msg = $("#bingoMsg");
-    if (marks.size === 9) msg.textContent = "FULL BINGO! hari pertama kamu legend. wajib cerita ke Dias kwkw";
+    if (marks.size === 9) msg.textContent = "FULL BINGO! hari ini kamu legend. wajib cerita ke Dias kwkw";
     else if (n === 1) msg.textContent = "BINGO! satu garis kelar. kabarin Dias yaa, ada kupon cerita nunggu kwkw";
     else if (n > 1) msg.textContent = "BINGO x" + n + "! kamu emang jago hari ini";
     else msg.textContent = "belum ada garis, santai aja kwkw (" + (marks.size - 1) + "/8 kejadian)";
     $("#bingoWa").hidden = !(n >= 1 && CONFIG.WA_NUMBER);
+    if (n >= 1 && CONFIG.WA_NUMBER) {
+      const dn = workdayNumber(new Date());
+      const text = dn > 0 ? "Dias, bingo hari ke-" + dn + " ku udah jadi nih!" : CONFIG.WA_BINGO_TEXT;
+      $("#bingoWa").href = "https://wa.me/" + CONFIG.WA_NUMBER.replace(/\D/g, "") + "?text=" + encodeURIComponent(text);
+    }
   }
   function toggleCell(i) {
     if (i === 4) return;
     if (marks.has(i)) marks.delete(i);
     else marks.add(i);
-    store.set("ksa-bingo", JSON.stringify([...marks].filter(x => x !== 4)));
+    store.set(bingoStorageKey, JSON.stringify([...marks].filter(x => x !== 4)));
     sfx.pop();
     paintBingo();
     const n = fullLines().length;
@@ -1686,11 +1728,11 @@ i.fa-solid,i.fa-brands{line-height:1}
   }
   $("#bingoReset").addEventListener("click", () => {
     marks = new Set([4]);
-    store.set("ksa-bingo", "[]");
+    store.set(bingoStorageKey, "[]");
     lastLines = 0;
     paintBingo();
   });
-  paintBingo();
+  buildBingoForToday();
 
   const ROADMAP = [
     { m: "Bulan 1", t: "Kenalan sama department", items: ["Kenal tugas dan bidang kerja department Promotion", "Belajar rekap & monitoring budget promosi sesuai alokasi", "Mulai kelola administrasi: pengarsipan dokumen, surat, proposal, kontrak", "Bikin & pantau PR/PO, invoice, sampai proses pembayaran vendor"] },
@@ -2046,6 +2088,9 @@ i.fa-solid,i.fa-brands{line-height:1}
     },
     papan() {
       renderJournalBoard();
+    },
+    main() {
+      buildBingoForToday();
     },
     letter() {
       if (chatOnce) return;
