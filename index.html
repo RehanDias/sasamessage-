@@ -255,6 +255,13 @@ i.fa-solid,i.fa-brands{line-height:1}
 .mail-tx b{display:block;font-size:1.02rem;line-height:1.3}
 .mail-tx small{display:block;margin-top:3px;font-weight:600;font-size:.82rem;line-height:1.4;color:var(--deep)}
 .mail-st{width:34px;height:34px;border:3px solid var(--ink);border-radius:50%;background:var(--paper);display:grid;place-items:center;font-size:.8rem}
+.mail-group{display:flex;align-items:center;gap:10px;margin:28px 0 14px;font-family:var(--f-display);font-weight:400;font-size:1.3rem;line-height:1.1;color:var(--paper);text-shadow:2px 2px 0 var(--ink)}
+.mail-group i{display:grid;place-items:center;width:34px;height:34px;border:3px solid var(--ink);border-radius:50%;background:var(--glow);color:var(--ink);font-size:.8rem;text-shadow:none;box-shadow:2px 2px 0 var(--ink)}
+.mail-stat{margin:0 0 4px;padding:8px 14px;border:3px solid var(--ink);border-radius:var(--r-md);background:var(--paper);box-shadow:3px 3px 0 var(--ink);font-weight:700;font-size:.85rem;line-height:1.45;text-align:center}
+.mail-chip{display:inline-block;margin-bottom:5px;padding:1px 10px;border:2px solid var(--ink);border-radius:99px;background:var(--lilac);font-style:normal;font-weight:800;font-size:.68rem}
+.mail[data-open=false] .mail-chip{background:var(--paper)}
+.mail[data-open=false]{box-shadow:3px 3px 0 var(--ink)}
+.mail[data-open=true]:not(.read) .mail-st{background:var(--rose);animation:nudge 1.3s ease-in-out infinite}
 .mail-note i{flex:none;margin-top:.3em}
 .mail-note{display:flex;align-items:flex-start;justify-content:center;gap:8px;max-width:300px;margin:20px auto 0;font-weight:600;font-size:.9rem;color:var(--lilac);text-align:center}
 
@@ -320,6 +327,10 @@ i.fa-solid,i.fa-brands{line-height:1}
 .game-result{font-weight:700;color:var(--paper);max-width:340px;text-align:center}
 
 .journal-box{padding:16px;border:3px solid var(--ink);border-radius:var(--r-lg);background:var(--paper);box-shadow:var(--shadow);margin-bottom:6px}
+.journal-picker{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:12px}
+.journal-picker label{font-weight:800;color:var(--deep);font-size:.92rem}
+.journal-picker input[type=date]{flex:1;min-width:150px;min-height:42px;padding:0 12px;border:2px solid var(--ink);border-radius:var(--r-md);background:var(--soft);font:inherit;font-weight:700;font-size:.95rem;color:var(--ink)}
+.journal-picker .btn{min-height:42px;padding:0 16px;font-size:.88rem;box-shadow:3px 3px 0 var(--ink)}
 .journal-date{font-weight:800;color:var(--deep);margin-bottom:10px;font-size:.95rem}
 .journal-input{width:100%;min-height:92px;padding:12px;border:2px solid var(--ink);border-radius:var(--r-md);background:var(--soft);font:inherit;font-size:.98rem;line-height:1.5;color:var(--ink);resize:vertical}
 .journal-input:focus{outline:3px solid var(--glow);outline-offset:2px}
@@ -358,23 +369,23 @@ i.fa-solid,i.fa-brands{line-height:1}
   <section class="scene boot active" data-id="boot" aria-label="Pembuka">
     <div class="wrap center">
       <span class="sys"><i class="fa-solid fa-envelope"></i> untuk: ka saa</span>
-      <h1>bentar yaa, lagi disiapin...</h1>
+      <h1>bentar yahh ka saaa, lagi disiapin...</h1>
       <ul class="checks" id="checks">
         <li><span class="dot"></span><span>cek nama <b>ketemu</b></span></li>
         <li><span class="dot"></span><span>cek berkas <b>lengkap</b></span></li>
         <li><span class="dot"></span><span>cek interview <b>lolos</b></span></li>
-        <li><span class="dot"></span><span>cek semangat <b>penuh (aamiin)</b></span></li>
+        <li><span class="dot"></span><span>cek semangat <b>penuhhh (aamiin)</b></span></li>
         <li><span class="dot"></span><span>cek kabar <b>baik, ada!</b></span></li>
       </ul>
       <div class="bar"><i id="bootbar"></i></div>
-      <p class="boot-note" id="bootNote">stuck di 99%, biasa kwkw...</p>
+      <p class="boot-note" id="bootNote">stuck di 99% dulu yahh, biasaa kwkwkw...</p>
       <button class="btn primary pulse" id="startBtn" type="button" hidden><i class="fa-solid fa-envelope-open-text"></i> Buka pesannya</button>
     </div>
   </section>
 
   <section class="scene" data-id="selamat" aria-label="Selamat">
     <div class="wrap">
-      <p class="note"><span id="greet">halooo</span> ka saa, ada kabar baik nih hehe</p>
+      <p class="note"><span id="greet">halooo</span> ka saaa, ada kabar baik nihh hehe</p>
       <div class="paper" id="paper" role="button" tabindex="0" aria-label="Tap untuk nge-cap lagi">
         <p class="small">Dengan ini dinyatakan bahwa</p>
         <h2 class="name">ANNASTASYA<br>TSABITAH</h2>
@@ -392,7 +403,7 @@ i.fa-solid,i.fa-brands{line-height:1}
       <div class="head">
         <span class="head-ic"><i class="fa-solid fa-flag-checkered"></i></span>
         <h2 class="title">Quest log: dari lamar sampe lolos</h2>
-        <p class="sub">tap quest yang berkedip buat klaim reward nya yaa</p>
+        <p class="sub">tap quest yang kedap kedip itu buat klaim reward nya yahh</p>
       </div>
       <div class="xp">
         <div class="xp-top"><span><i class="fa-solid fa-star"></i><span id="rank">Pelamar</span></span><span id="xpnum">0 / 200 xp</span></div>
@@ -407,7 +418,7 @@ i.fa-solid,i.fa-brands{line-height:1}
       <div class="head">
         <span class="head-ic"><i class="fa-solid fa-id-card"></i></span>
         <h2 class="title">ID card kamu udah jadi</h2>
-        <p class="sub">tap kartunya, bisa dibalik loh</p>
+        <p class="sub">tap kartunya yahh, bisa dibalik lohh hehe</p>
       </div>
       <div class="strap"></div>
       <div class="card3d" id="card3d" role="button" tabindex="0" aria-pressed="false" aria-label="Balik kartu">
@@ -429,7 +440,7 @@ i.fa-solid,i.fa-brands{line-height:1}
                 <li><i class="fa-solid fa-star"></i>Senyum, dibawa dari rumah</li>
                 <li><i class="fa-solid fa-shirt"></i>Baju rapi, hati tenang</li>
               </ul>
-              <p class="tip">kalo kartu ini ketemu, tolong ingetin orangnya: u did great :)</p>
+              <p class="tip">kalo kartu ini ketemu, tolong ingetin orang nya yahh: u did really really well :)))</p>
               <div class="barcode"></div>
             </div>
           </div>
@@ -453,7 +464,7 @@ i.fa-solid,i.fa-brands{line-height:1}
       <div class="head">
         <span class="head-ic"><i class="fa-solid fa-route"></i></span>
         <h2 class="title">Roadmap 6 bulan kamu</h2>
-        <p class="sub">udah aku rangkum dari kurikulum Promotion nya, biar kebayang perjalanannya kayak apa</p>
+        <p class="sub">udah aku rangkum dari kurikulum promotion nya yahh, biar kebayang perjalanan nya kaya gimana</p>
       </div>
       <div class="xp" style="text-align:left">
         <div class="xp-top"><span><i class="fa-solid fa-road"></i><span>Progress magang</span></span><span id="progressLabel">hari ke-0 / 0</span></div>
@@ -467,7 +478,7 @@ i.fa-solid,i.fa-brands{line-height:1}
         </header>
         <div class="sec" id="roadmapList"></div>
       </article>
-      <p class="hint">ga usah dihafal, ini cuma biar kamu ga kaget aja pas dikasih tugas. pelan-pelan, satu bulan satu langkah</p>
+      <p class="hint">ga usah dihafalin yahh, ini cuma biar kamu ga kaget aja pas dikasih tugas, pelan pelan aja satu bulan satu langkah okeyy</p>
     </div>
   </section>
 
@@ -476,7 +487,7 @@ i.fa-solid,i.fa-brands{line-height:1}
       <div class="head">
         <span class="head-ic"><i class="fa-solid fa-bag-shopping"></i></span>
         <h2 class="title">Bekal buat hari pertama</h2>
-        <p class="sub">tap tiap item, isinya pesan dari aku hehe (<span id="bekalCount">0</span>/6)</p>
+        <p class="sub">tap tiap item yahh, isinya pesan dari aku hehe (<span id="bekalCount">0</span>/6)</p>
       </div>
       <div class="grid" id="items"></div>
     </div>
@@ -487,7 +498,7 @@ i.fa-solid,i.fa-brands{line-height:1}
       <div class="head">
         <span class="head-ic"><i class="fa-solid fa-code-branch"></i></span>
         <h2 class="title">Patch notes</h2>
-        <p class="sub">update besar buat ka saa, tolong di-review yaa kwkw</p>
+        <p class="sub">update besar buat ka saaa, tolong di review yahh kwkwkw</p>
       </div>
       <article class="patch">
         <header class="patch-head">
@@ -495,7 +506,7 @@ i.fa-solid,i.fa-brands{line-height:1}
           <p id="patchDate"></p>
         </header>
         <div class="meta">
-          <span class="chip"><i class="fa-solid fa-user-check"></i>Reviewer: Dias</span>
+          <span class="chip"><i class="fa-solid fa-user-check"></i>Reviewer: Tama</span>
           <span class="chip state" id="prState">Menunggu approve</span>
         </div>
         <div class="sec">
@@ -533,29 +544,29 @@ i.fa-solid,i.fa-brands{line-height:1}
       </article>
       <div class="merge-row">
         <button class="btn primary" id="mergeBtn" type="button"><i class="fa-solid fa-code-merge"></i> Approve &amp; merge</button>
-        <p class="merged-note" id="mergedNote" hidden>Merged ke main. 0 conflict, 0 bug, 1 orang bangga (Dias).</p>
+        <p class="merged-note" id="mergedNote" hidden>Merged ke main. 0 conflict, 0 bug, 1 orang bangga (Tama).</p>
       </div>
     </div>
   </section>
 
-  <section class="scene" data-id="letter" aria-label="Pesan dari Dias">
+  <section class="scene" data-id="letter" aria-label="Pesan dari Tama">
     <div class="wrap">
       <div class="head">
         <span class="head-ic"><i class="fa-solid fa-comment-dots"></i></span>
-        <h2 class="title">Pesan dari Dias</h2>
-        <p class="sub">tap lanjut baca, biar kayak lagi chat hehe</p>
+        <h2 class="title">Pesan dari Tama</h2>
+        <p class="sub">tap lanjut baca yahh, biar kaya lagi chat hehe</p>
       </div>
       <div class="chat">
         <div class="chat-head">
-          <span class="avatar">D</span>
-          <div><b>Dias</b><small id="chatStatus">online</small></div>
+          <span class="avatar">T</span>
+          <div><b>Tama</b><small id="chatStatus">online</small></div>
         </div>
         <div class="chat-body" id="chatBody" role="log" aria-live="polite"></div>
       </div>
       <div class="chat-actions">
         <button class="btn" id="chatNext" type="button"><i class="fa-solid fa-paper-plane"></i> Lanjut baca</button>
         <button class="link" id="chatAll" type="button">baca semua sekaligus</button>
-        <p class="chat-done" id="chatDone" hidden>makasih udah baca sampe abis yaa, masih ada surat-surat buat dibuka nanti <i class="fa-solid fa-heart"></i></p>
+        <p class="chat-done" id="chatDone" hidden>makasihh udah baca sampe abis yahh, masih ada surat surat buat dibuka nanti kwkwk <i class="fa-solid fa-heart"></i></p>
       </div>
     </div>
   </section>
@@ -565,10 +576,14 @@ i.fa-solid,i.fa-brands{line-height:1}
       <div class="head">
         <span class="head-ic"><i class="fa-solid fa-envelope"></i></span>
         <h2 class="title">Surat buat nanti</h2>
-        <p class="sub">ada 3 surat yang dikunci sampai waktunya. bukanya nanti aja yaa, sabar hehe</p>
+        <p class="sub">ada surat yang dikunci sampai waktunya, ada juga yang boleh dibuka pas kamu lagi butuh aja. bukanya nanti aja yahh, sabar dulu hehe</p>
       </div>
+      <p class="mail-stat" id="mailStat"></p>
+      <h3 class="mail-group"><i class="fa-solid fa-calendar-days"></i> Sesuai jadwal</h3>
       <ul class="mails" id="mails"></ul>
-      <p class="mail-note"><i class="fa-solid fa-bookmark"></i><span>simpen link ini, biar bisa dibuka lagi pas waktunya</span></p>
+      <h3 class="mail-group"><i class="fa-solid fa-heart"></i> Buka pas kamu butuh</h3>
+      <ul class="mails" id="mailsMood"></ul>
+      <p class="mail-note"><i class="fa-solid fa-bookmark"></i><span>simpen link nya yahh, biar bisa dibuka lagi pas waktunya</span></p>
     </div>
   </section>
 
@@ -577,7 +592,7 @@ i.fa-solid,i.fa-brands{line-height:1}
       <div class="head">
         <span class="head-ic"><i class="fa-solid fa-dice"></i></span>
         <h2 class="title">Main dulu, yuk</h2>
-        <p class="sub">ramalan dan bingo buat hari pertama. buka lagi pas hari H yaa, ramalannya ganti tiap hari</p>
+        <p class="sub">ramalan sama bingo buat hari pertama yahh, buka lagi pas hari H, ramalan nya ganti ganti tiap hari</p>
       </div>
       <div class="fortune">
         <button class="btn primary" id="fortuneBtn" type="button"><i class="fa-solid fa-wand-magic-sparkles"></i> Buka ramalan hari ini</button>
@@ -590,15 +605,15 @@ i.fa-solid,i.fa-brands{line-height:1}
             <li><i class="fa-solid fa-user-group"></i><span>Peluang dapet temen baru: <b id="fFriend">0</b>%</span></li>
           </ul>
           <p class="fortune-advice" id="fAdvice"></p>
-          <small>ramalan ini 100% ilmiah (menurut Dias)</small>
+          <small>ramalan ini 100% ilmiah (menurut Tama)</small>
         </div>
       </div>
       <h3 class="sec-title">Bingo <span id="bingoDayLabel">hari pertama</span></h3>
-      <p class="sub">diacak khusus buat hari ini, beda tiap hari. tap kotak yang beneran kejadian, dapet satu garis = BINGO!</p>
+      <p class="sub">diacak khusus buat hari ini yahh, beda tiap hari. tap kotak yang beneran kejadian, dapet satu garis = BINGO!</p>
       <div class="bingo" id="bingo"></div>
       <p class="bingo-msg" id="bingoMsg" role="status">belum ada garis, santai aja kwkw</p>
       <div class="bingo-actions">
-        <a class="btn" id="bingoWa" href="#" target="_blank" rel="noopener" hidden><i class="fa-brands fa-whatsapp"></i> Kabarin Dias</a>
+        <a class="btn" id="bingoWa" href="#" target="_blank" rel="noopener" hidden><i class="fa-brands fa-whatsapp"></i> Kabarin Tama</a>
         <button class="link" id="bingoReset" type="button">ulang bingo</button>
       </div>
     </div>
@@ -609,20 +624,25 @@ i.fa-solid,i.fa-brands{line-height:1}
       <div class="head">
         <span class="head-ic"><i class="fa-solid fa-book-open"></i></span>
         <h2 class="title">Jurnal kecil buat kamu</h2>
-        <p class="sub">satu kalimat aja tiap hari, buat kamu sendiri. ini tersimpan di HP kamu doang, aku beneran ga bisa baca ini</p>
+        <p class="sub">satu kalimat aja tiap hari yahh, buat kamu sendiri. ada yang kelewat? pilih tanggal nya, tulis aja belakangan gapapa kok. ini tersimpan di HP kamu doang, aku beneran ga bisa baca ini hehe</p>
       </div>
       <div class="journal-box">
+        <div class="journal-picker">
+          <label for="journalPick">Pilih tanggal</label>
+          <input type="date" id="journalPick">
+          <button class="btn" id="journalTodayBtn" type="button"><i class="fa-solid fa-calendar-day"></i> Hari ini</button>
+        </div>
         <p class="journal-date" id="journalDate"></p>
         <textarea id="journalInput" class="journal-input" maxlength="600" placeholder="hari ini gimana? tulis aja sebebasnya..."></textarea>
         <div class="journal-actions">
           <button class="btn primary" id="journalSave" type="button"><i class="fa-solid fa-floppy-disk"></i> Simpan</button>
-          <span class="journal-badge" id="journalStatus"><i class="fa-solid fa-circle-info"></i><span>Belum ada catatan hari ini</span></span>
+          <span class="journal-badge" id="journalStatus"><i class="fa-solid fa-circle-info"></i><span>Belum ada catatan di tanggal ini</span></span>
         </div>
       </div>
       <div class="journal-board journal-board-mini">
         <div class="journal-notes" id="journalPreview"></div>
       </div>
-      <p class="hint"><i class="fa-solid fa-arrow-right"></i> ini baru preview punya hari ini. koleksi lengkap semua catatan kamu ada di papan jurnal, geser lanjut yaa</p>
+      <p class="hint"><i class="fa-solid fa-arrow-right"></i> ini preview catatan di tanggal yang kamu pilih. koleksi lengkap semua catatan kamu ada di papan jurnal, geser lanjut yaa</p>
     </div>
   </section>
 
@@ -662,7 +682,7 @@ i.fa-solid,i.fa-brands{line-height:1}
       <div class="bingo-actions">
         <button class="btn primary" id="gameStart" type="button"><i class="fa-solid fa-play"></i> Mulai main</button>
         <p class="game-result" id="gameResult" hidden></p>
-        <a class="btn" id="gameWa" href="#" target="_blank" rel="noopener" hidden><i class="fa-brands fa-whatsapp"></i> Pamer skor ke Dias</a>
+        <a class="btn" id="gameWa" href="#" target="_blank" rel="noopener" hidden><i class="fa-brands fa-whatsapp"></i> Pamer skor ke Tama</a>
       </div>
     </div>
   </section>
@@ -673,7 +693,7 @@ i.fa-solid,i.fa-brands{line-height:1}
         <span class="head-ic"><i class="fa-solid fa-trophy"></i></span>
       </div>
       <h2 class="big">Quest selesai.<br>Magang arc dimulai.</h2>
-      <p class="lead">semangattt ka saa, dari jauh aku ikut nyemangatin. ini ada kupon kecil dan satu kenang-kenangan dari aku.</p>
+      <p class="lead">semangatttt ka saaa, dari jauh aku ikut nyemangatin yahh. ini ada kupon kecil sama satu kenang kenangan dari aku hehe :)))</p>
       <div class="coupon" id="coupon">
         <div class="coupon-top">
           <i class="fa-solid fa-ticket"></i>
@@ -688,8 +708,8 @@ i.fa-solid,i.fa-brands{line-height:1}
         <button class="btn primary" id="claimBtn" type="button"><i class="fa-solid fa-ticket"></i> Klaim kupon</button>
         <button class="btn dodge" id="noBtn" type="button">Nggak butuh kupon</button>
         <button class="btn" id="certBtn" type="button"><i class="fa-solid fa-download"></i> Simpan kenang-kenangan</button>
-        <a class="btn" id="waBtn" href="#" target="_blank" rel="noopener" hidden><i class="fa-brands fa-whatsapp"></i> Kabarin Dias lewat WA</a>
-        <p class="claim-note" id="claimNote" hidden>oke noted. kabarin aku pas udah pulang dan sempet yaa, aku siap dengerin <i class="fa-solid fa-heart"></i></p>
+        <a class="btn" id="waBtn" href="#" target="_blank" rel="noopener" hidden><i class="fa-brands fa-whatsapp"></i> Kabarin Tama lewat WA</a>
+        <p class="claim-note" id="claimNote" hidden>okeee noted. kabarin aku pas udah pulang dan sempet yahh, aku siap dengerin kok <i class="fa-solid fa-heart"></i></p>
         <button class="link" id="replayBtn" type="button"><i class="fa-solid fa-rotate-left"></i> ulang dari awal</button>
       </div>
       <p class="foot"><i class="fa-solid fa-heart"></i><span>dibuat dari orang yang kamu baru kenal dari Jakarta</span></p>
@@ -746,11 +766,11 @@ i.fa-solid,i.fa-brands{line-height:1}
     START: "2026-09-21T08:00:00+07:00",
     PROGRAM_MONTHS: 6,
     WA_NUMBER: "+6287777766361",
-    WA_TEXT: "Dias, aku klaim kupon cerita hari pertama yaa 💜",
-    WA_BINGO_TEXT: "Dias, bingo hari pertamaku udah jadi nih!",
-    WA_GAME_TEXT: "Dias, aku baru menang mini game Sat-Set Tugas nih kwkw",
+    WA_TEXT: "Tama, aku klaim kupon cerita hari pertama yaa 💜",
+    WA_BINGO_TEXT: "Tama, bingo hari pertamaku udah jadi nih!",
+    WA_GAME_TEXT: "Tama, aku baru menang mini game Sat-Set Tugas nih kwkw",
     PHOTO: "",
-    MUSIC: "https://raw.githubusercontent.com/RehanDias/sasamessage-/main/yettocome.mp3",
+    MUSIC: "https://raw.githubusercontent.com/RehanTama/sasamessage-/main/yettocome.mp3",
     LETTER_HOURS: { pagi: -3, minggu: 120 }
   };
 
@@ -783,7 +803,7 @@ i.fa-solid,i.fa-brands{line-height:1}
   }
   $("#idDate").textContent = "Berlaku mulai " + fullDate;
   const couponP = $("#coupon p:not(.code)");
-  if (couponP) couponP.textContent = "berlaku sampai hari terakhir magang, " + fullEndDate + ". tanpa minimal cerita, yang receh malah lebih seru.";
+  if (couponP) couponP.textContent = "berlaku sampe hari terakhir magang, " + fullEndDate + ". tanpa minimal cerita yahh, yang receh malah lebih seru kwkwk.";
   const couponTitle = $("#couponTitle");
   const couponCode = $("#coupon .code");
   {
@@ -992,6 +1012,7 @@ i.fa-solid,i.fa-brands{line-height:1}
       from.classList.remove("leaving");
       to.classList.remove("enter");
       busy = false;
+      if (from.dataset.id === "jurnal" && typeof flushJournal === "function") flushJournal();
       if (from.dataset.id === "game" && typeof stopGameQuiet === "function") stopGameQuiet();
       if (hooks[ids[n]]) hooks[ids[n]]();
     };
@@ -1008,6 +1029,8 @@ i.fa-solid,i.fa-brands{line-height:1}
   addEventListener("keydown", e => {
     if (e.key === "Escape") { closeOverlays(); return; }
     if (overlayOpen() || idx === 0) return;
+    const tag = e.target && e.target.tagName;
+    if (tag === "TEXTAREA" || tag === "INPUT") return;
     if (e.key === "ArrowRight") go(idx + 1);
     if (e.key === "ArrowLeft" && idx > 1) go(idx - 1);
   });
@@ -1048,7 +1071,7 @@ i.fa-solid,i.fa-brands{line-height:1}
     note.classList.add("show");
     await wait(reduce ? 200 : 1400);
     bar.style.width = "100%";
-    note.textContent = "oke udah siap, beneran kali ini";
+    note.textContent = "okeee udah siap, beneran kali ini kwkwk";
     sfx.tick();
     await wait(reduce ? 100 : 500);
     $("#startBtn").hidden = false;
@@ -1092,10 +1115,10 @@ i.fa-solid,i.fa-brands{line-height:1}
   });
 
   const QUESTS = [
-    { t: "Berani melamar", d: "kamu berani nyoba dan ngirim lamaran. langkah pertama itu yang paling susah, dan kamu udah lewatin.", xp: 20 },
-    { t: "Dipanggil interview", d: "lamaran kamu dilirik dan kamu dipanggil buat interview. itu bukan cuma keberuntungan, itu tanda profil kamu emang menarik.", xp: 30 },
-    { t: "Interview langsung", d: "dateng langsung, ketemu orangnya, jawab pertanyaan satu per satu. deg-degan itu wajar, dan kamu tetep maju.", xp: 50 },
-    { t: "Dinyatakan LOLOS", d: "resmi jadi peserta Maganghub Kemnaker, Summarecon Serpong Batch 2. SAH. HARUS DIRAYAKANN!", xp: 100 }
+    { t: "Berani melamar", d: "kamu berani nyoba dan ngirim lamaran, langkah pertama tuh yang paling susah dan kamu udah lewatinnn hehe.", xp: 20 },
+    { t: "Dipanggil interview", d: "lamaran kamu dilirik trus dipanggil interview, itu bukan cuma keberuntungan yahh, itu tanda profil kamu emng menarik :)", xp: 30 },
+    { t: "Interview langsung", d: "dateng langsung, ketemu orang nya, jawab pertanyaan satu satu. deg degan itu wajar tapi kamu tetep majuuu, keren bangett.", xp: 50 },
+    { t: "Dinyatakan LOLOS", d: "resmi jadi peserta Maganghub Kemnaker Summarecon Serpong Batch 2. SAHHH. HARUS DIRAYAKANNN!", xp: 100 }
   ];
   const RANKS = ["Pelamar", "Pelamar yang dibales", "Kandidat", "Finalis", "Peserta Magang"];
   const TOTAL_XP = QUESTS.reduce((a, q) => a + q.xp, 0);
@@ -1176,10 +1199,10 @@ i.fa-solid,i.fa-brands{line-height:1}
       $("#clock").hidden = true;
       if (-diff < 864e5) {
         label.textContent = "hari pertama: HARI INI";
-        note.textContent = "hari ini ka saa!! semangattt, aku doain dari sini :)";
+        note.textContent = "hari ini ka saaa!! semangattt yahh, aku doain dari sini :)))";
       } else {
         label.textContent = "hari pertama udah kamu lewatin";
-        note.textContent = "kamu keren banget, terusin yaa. aku bangga :)";
+        note.textContent = "kamu keren bangettt, terusin yahh. im proud of uuu :)))";
       }
       return;
     }
@@ -1193,20 +1216,20 @@ i.fa-solid,i.fa-brands{line-height:1}
     cd.h.textContent = h;
     cd.m.textContent = m;
     cd.s.textContent = s;
-    if (diff < 12 * 36e5) note.textContent = "sebentar lagi!! tarik napas dulu ka saa, kamu pasti bisa";
-    else if (diff < 2 * 864e5) note.textContent = "tinggal sebentar lagi kwkwk. siapin baju, tidur yang cukup yaa";
-    else note.textContent = "masih ada waktu buat siap-siap, tapi jangan lupa istirahat yaa";
+    if (diff < 12 * 36e5) note.textContent = "sebentar lagiii!! tarik napas dulu ka saaa, kamu pasti bisaaa";
+    else if (diff < 2 * 864e5) note.textContent = "tinggal bentar lagi kwkwk, siapin baju sama tidur yang cukup yahh";
+    else note.textContent = "masih ada waktu buat siap siap, tapi jangan lupa istirahat yahh";
   }
   tickClock();
   setInterval(tickClock, 1000);
 
   const ITEMS = [
-    { i: "fa-heart-pulse", t: "Deg-degan", tag: "Passive", m: "gapapa banget deg-degan ka saa, itu tandanya kamu peduli sama hal yang baru. sometimes courage is just doing it while ur heart is still beating a little faster :) ga usah nunggu tenang dulu baru jalan." },
-    { i: "fa-brain", t: "Mau belajar", tag: "Epic", m: "kamu udah lolos seleksi, artinya mereka percaya kamu bisa belajar. ga harus langsung bisa semuanya di hari pertama. kalo bingung, nanya aja yaa, itu bukan tanda kamu ga bisa, itu tanda kamu lagi belajar." },
-    { i: "fa-bottle-water", t: "Air minum dan makan siang", tag: "Consumable", m: "minum yang cukup, makan siang jangan di-skip yaa kwkw. badan enak, kepala enak, kerjaan ikut enak." },
-    { i: "fa-handshake", t: "Kenalan", tag: "Rare", m: "hari pertama pasti ketemu banyak orang baru. senyum, sapa, sebut nama. belum hafal semua nama juga gapapa, pelan-pelan lama-lama kenal kok." },
-    { i: "fa-hands-praying", t: "Doa dari jauh", tag: "Buff", m: "buff pasif dari Dias: doa yang dikirim dari jauh. semoga hari-harinya lancar, orang-orangnya baik, dan semua aman terkendali, aamiin paling kenceng." },
-    { i: "fa-moon", t: "Istirahat", tag: "Legendary", m: "sometimes resting is also part of moving forward. doing ur best doesnt always mean pushing urself until ure exhausted, jadi kalo capek ya istirahat, jangan dipaksa terus, okeyyy?" }
+    { i: "fa-heart-pulse", t: "Deg-degan", tag: "Passive", m: "gapapa bangettt deg degan ka saaa, itu tanda nya kamu peduli sama hal yang baru. sometimes courage is just doing it while ur heart is still beating a little faster :))) ga usah nunggu tenang dulu baru jalan yahh, nervous bukan berarti kamu ga siap kok, kadang cuma karena kamu peduli." },
+    { i: "fa-brain", t: "Mau belajar", tag: "Epic", m: "kamu udah lolos seleksi, artinya mereka percaya kamu bisa belajar. ga harus langsung bisa semuanya di hari pertama kok. kalo bingung nanya aja yahh, itu bukan tanda kamu ga bisa, itu tanda kamu lagi belajar hehe." },
+    { i: "fa-bottle-water", t: "Air minum dan makan siang", tag: "Consumable", m: "minum yang cukup, makan siang jangan di skip yahh kwkwk. badan enak, kepala enak, kerjaan ikut enak. jangan makan mie terus juga yaaa wkwk." },
+    { i: "fa-handshake", t: "Kenalan", tag: "Rare", m: "hari pertama pasti ketemu banyak orang baru, senyum, sapa, sebut nama. belum hafal semua nama juga gapapa kok, pelan pelan lama lama juga kenal hehe." },
+    { i: "fa-hands-praying", t: "Doa dari jauh", tag: "Buff", m: "buff pasif dari Tama: doa yang dikirim dari jauhhh. semoga hari hari nya lancarrr, orang orang nya baikk, semuanya aman terkendali, aamiin paling kenceng yahh :)))" },
+    { i: "fa-moon", t: "Istirahat", tag: "Legendary", m: "resting will always be a good answer kwkwk, sometimes resting is also part of moving forward. doing ur best doesnt always mean pushing urself until ure exhausted, jadi kalo capek yaudah istirahat, jangan dipaksa terus okeyyy? selamattt tidurr yahh ka saaa :)" }
   ];
   const grid = $("#items");
   let opened = 0;
@@ -1254,18 +1277,18 @@ i.fa-solid,i.fa-brands{line-height:1}
   });
 
   const MSGS = [
-    "ka saaaa, selamattt yaaa buat magangnya!! 🥹 aku ikut seneng banget pas denger kabarnya kwkwkw",
-    "kita emang belum lama kenal sih, tapi dari beberapa kali ngobrol keliatan kamu tuh serius dan gigih. jadi pas denger kamu lolos, aku ga kaget, malah kepikiran 'nah kan, emang pantes'",
-    "aku tau prosesnya ga sesimple kelihatannya, ada bikin lamaran, nunggu kabar, deg-degan pas interview, dan tetep kamu jalanin sampe akhir. semua itu ada effort di belakangnya, makanya HARUS DIRAYAKANN. sekecil apapun itu, apalagi yang segede ini kwkwk",
-    "hari pertama di tempat baru pasti deg-degan, gapapa banget. sometimes courage is just doing it while ur heart is still beating a little faster :) ga harus nunggu tenang dulu baru jalan",
-    "kalo bingung, nanya aja yaa. nanya itu bukan tanda kamu ga bisa, tapi tanda kamu lagi belajar. everybody starts somewhere, dan kamu udah buktiin kamu pantes ada di sana",
-    "kalo nanti ada hari yang capek atau ga sesuai rencana, isokeyy. u dont have to figure everything out on day one. doing ur best doesnt always mean pushing urself until ure exhausted, sometimes ur best is knowing when to rest",
-    "dan buat lipe nya, tenang aja, no pressure. atur pelan-pelan, yang penting kamu nyaman dan ga kepaksa",
-    "i hope u know, u deserve the same kindness that u keep giving to everyone else. jangan lupa bilang ke diri sendiri juga yaa, u did great",
-    "aku sempet liat gambaran kurikulumnya, dari ngatur budget, bikin PO, sampe koordinasi event dan vendor. keliatan banyak, tapi semua itu bakal dikasih pelan-pelan, satu bulan satu langkah, bukan langsung disuruh jago semua hari pertama",
-    "jadi kalo ada bulan yang berasa berat, inget lagi ini: kamu ga lagi ketinggalan, kamu lagi di tahap yang emang seharusnya. progress itu ga harus keliatan cepet biar tetep dihitung progress",
-    "semoga kantornya nyaman, orang-orangnya baik, ilmunya banyak, semuanya lancar (aamiin paling kenceng), dan pas pulang badannya ga terlalu remuk. nanti kalo udah pulang dan sempet, cerita yaa, aku pengen denger hari pertamanya gimana 💜",
-    "im really proud of uuu ka saa. semangattt! — Dias"
+    "ka saaaaa, selamattt yahhh buat magang nyaaa!! aku ikut seneng bangettt pas kamu kabarin lolos, sumpah kwkwkwk, congratsss yahhh :)))",
+    "kita emng belum lama kenal sih, tapi dari beberapa kali ngobrol tuh keliatan banget kamu itu serius sama gigih, jadi pas denger kamu lolos aku ga kaget, malah kaya 'nahh kan bener, emng pantes' gitu kwkwk",
+    "aku tau prosesnya ga sesimple kelihatannya, dari bikin lamaran, nunggu kabar, deg degan pas interview offline, tapi kamu tetep jalanin sampe akhirr, jadi semua itu ada effort nya yahh, makanya HARUS DIRAYAKANNN, sekecil apapun itu apalagi yang segede ini kwkwkw",
+    "hari pertama di tempat baru pasti deg degan, gapapa bangettt, sometimes courage is just doing it while ur heart is still beating a little faster :))) kamu ga harus nunggu tenang dulu baru jalan okeyy",
+    "kalo bingung nanya aja yahh, nanya tuh bukan tanda kamu ga bisa tapi tanda kamu lagi belajar, everybody starts somewhere, dan kamu udah buktiin kamu pantes ada di sana hehe",
+    "kalo nanti ada hari yang capek atau ga sesuai rencana, isokeyyy, u dont have to figure everything out on day one, resting will always be a good answer kwkwk, jadi kalo badan udah minta istirahat yaudah istirahat aja yahh jangan dipaksa terus",
+    "trus buat lipe nya, tenang aja no pressure, atur pelan pelan aja yang penting kamu nyaman ga kepaksa, aku tetep nonton kok kapan pun kamu sempet, mau sebentar pun gapapa kwkwk",
+    "i hope u know, u deserve the same kindness that u keep giving to everyone else, jangan lupa bilang ke diri sendiri juga yahh, u did really really well, jangan lupa kasi credit ke diri sendiri okayy",
+    "aku sempet liat gambaran kurikulum nya, dari ngatur budget, bikin PO, sampe koordinasi event sama vendor, keliatannya banyak sih tapi semua itu dikasih pelan pelan, satu bulan satu langkah, bukan langsung disuruh jago semua di hari pertama kwkw. hari pertama tuh bukan buat buktiin kamu udah bisa, tapi buat mulai ngerti cara semuanya jalan",
+    "jadi kalo ada bulan yang berasa berat, inget lagi ini yahh: kamu ga lagi ketinggalan, kamu lagi di tahap yang emng seharusnya, progress tuh ga harus keliatan cepet biar tetep dihitung progress okeyy",
+    "semogaaa kantor nya nyaman, orang orang nya baikk, ilmu nya banyakkk, semuanya lancarrr (aamiin paling kenceng), trus pas pulang badan nya ga terlalu remuk kwkwk. nanti kalo udah pulang dan sempet, cerita yahh, aku pengen denger day one nya gimana :)",
+    "im really proud of uuuuu ka saaaa, sangattt. semangattt yahhh! — Tama"
   ];
   const chatBody = $("#chatBody");
   const chatNext = $("#chatNext");
@@ -1328,11 +1351,11 @@ i.fa-solid,i.fa-brands{line-height:1}
     burstAt($("#coupon"), 170, 1.2);
     const dayNum = workdayNumber(new Date());
     const waText = dayNum > 0
-      ? "Dias, aku klaim kupon cerita hari ke-" + dayNum + " yaa 💜"
+      ? "Tama, aku klaim kupon cerita hari ke-" + dayNum + " yaa 💜"
       : CONFIG.WA_TEXT;
     const note = $("#claimNote");
     if (dayNum > 0) {
-      note.childNodes[0].textContent = "oke noted, hari ke-" + dayNum + " (Senin–Jumat) yaa. kabarin aku pas udah pulang dan sempet, aku siap dengerin ";
+      note.childNodes[0].textContent = "okeee noted, hari ke-" + dayNum + " (Senin–Jumat) yahh. kabarin aku pas udah pulang dan sempet, aku siap dengerin kok ";
     }
     if (CONFIG.WA_NUMBER) {
       const wa = $("#waBtn");
@@ -1359,35 +1382,75 @@ i.fa-solid,i.fa-brands{line-height:1}
   }
 
   const startMs = startDate.getTime();
+  const HOUR = 36e5;
+  const monthAt = n => {
+    const d = new Date(startDate);
+    d.setMonth(d.getMonth() + n);
+    return d.getTime();
+  };
   const MAILS = [
-    { i: "fa-sun", t: "Buka pagi hari pertama", at: startMs + CONFIG.LETTER_HOURS.pagi * 36e5, hint: "udah bisa dibuka", m: "pagiii ka saa, ini harinya!! tarik napas dulu, minum air, cek lagi berkas dan ID nya. hari ini boleh deg-degan, boleh salah dikit, boleh banyak nanya. kamu ada di sana karena kamu emang pantes, bukan karena keberuntungan doang. sometimes courage is just doing it while ur heart is still beating a little faster. semangattt yaa, aku doain dari jauh. — Dias" },
-    { i: "fa-battery-quarter", t: "Buka kalo lagi capek", at: 0, hint: "buka pas beneran lagi capek yaa, jangan sekarang kwkw", m: "kalo kamu lagi baca ini, berarti lagi capek. gapapa banget. tarik napas, minum air, duduk sebentar. capek itu tandanya kamu udah berusaha, bukan tandanya kamu kurang kuat. sometimes resting is also part of moving forward, dan doing ur best doesnt always mean pushing urself until ure exhausted. pelan-pelan aja ka saa, kamu ga harus sempurna, cukup terus jalan. — Dias" },
-    { i: "fa-medal", t: "Buka pas minggu pertama kelar", at: startMs + CONFIG.LETTER_HOURS.minggu * 36e5, hint: "udah bisa dibuka", m: "selamattt, minggu pertama kelar!! kamu udah ngelewatin bagian yang paling bikin deg-degan: serba pertama kali. sekarang tempatnya udah ga terlalu asing kan? kalo ada cerita seru, atau yang bikin kaget, atau yang receh, kupon cerita hari pertama masih berlaku sampe hari terakhir magang kamu kwkw, jadi ga usah buru-buru. im proud of u, ka saa. — Dias" }
+    { id: "pagi", g: "time", tag: "Hari H", i: "fa-sun", t: "Buka pagi hari pertama", at: startMs + CONFIG.LETTER_HOURS.pagi * HOUR, hint: "udah bisa dibuka", m: "pagiiii ka saaa, ini harinyaaa!! tarik napas dulu yahh, minum air, cek lagi berkas sama ID nya, jangan lupa motor nya juga aman kwkwk. hari ini boleh deg degan, boleh salah dikit, boleh banyak nanya, kamu ada di sana karena emng pantes bukan karena keberuntungan doang. hari pertama tuh bukan buat buktiin kamu udah bisa, tapi buat mulai ngerti cara semuanya jalan. sometimes courage is just doing it while ur heart is still beating a little faster :))) semangattt yahhh, aku doain dari jauhh, berangkat atii atii yaa! — Tama" },
+    { id: "minggu1", g: "time", tag: "Minggu 1", i: "fa-medal", t: "Buka pas minggu pertama kelar", at: startMs + CONFIG.LETTER_HOURS.minggu * HOUR, hint: "udah bisa dibuka", m: "selamattt, minggu pertama kelarrr!! kamu udah ngelewatin bagian yang paling bikin deg degan yaitu serba pertama kali kwkwkw. sekarang tempat nya udah ga terlalu asing kan? kalo ada cerita seru, atau yang bikin kaget, atau yang receh, kupon cerita hari pertama masih berlaku sampe hari terakhir magang kamu yahh, jadi ga usah buru buru hehe. im really proud of uuu ka saaa :))) — Tama" },
+    { id: "minggu2", g: "time", tag: "Minggu 2", i: "fa-calendar-check", t: "Buka pas minggu kedua kelar", at: startMs + 288 * HOUR, hint: "udah bisa dibuka", m: "haloooo ka saaa, minggu kedua kelarrr!! kalo minggu pertama itu serba kenalan, minggu kedua biasanya mulai kerasa ritme nya, mulai hafal jam jam ngantuk, mulai tau harus nanya siapa buat apa, sama mulai ngerti alur kerjaan di promotion. kalo masih ada yang bingung soal rekap budget promosi atau ngarsipin dokumen ya wajar bangett, namanya juga masih belajar kwkw. urusan spreadsheet sini aku bantuin, aku jago loh wkwkwk. everybody starts somewhere yahh, dan kamu lagi jalan pelan pelan tapi pasti, im proud of uuu :))) — Tama" },
+    { id: "minggu3", g: "time", tag: "Minggu 3", i: "fa-file-invoice", t: "Buka pas minggu ketiga kelar", at: startMs + 456 * HOUR, hint: "udah bisa dibuka", m: "minggu ketiga kelarrr!! di fase ini biasanya mulai ketemu yang detail detail, kaya PR, PO, invoice, sampe pembayaran vendor. angka sama dokumen emng bikin pusing sih, tapi teliti itu bukan bakat, itu kebiasaan yahh. cek dua kali, catet yang penting, kalo ragu tanya dulu sebelum kirim bukan setelahnya. kalo ada salah dikit gapapa kok, bukan akhir dunia, malah itu cara paling cepet buat inget kwkwk. doing ur best doesnt always mean being perfect okeyy, minum air, makan yang bener, jangan lupa istirahat yahhh. — Tama" },
+    { id: "bulan1", g: "time", tag: "Bulan 1", i: "fa-calendar-days", t: "Buka pas sebulan magang", at: monthAt(1), hint: "udah bisa dibuka", m: "SEBULANNNN!! selamattt ka saaaa, congratsss bangett :))) sebulan lalu kamu masih deg degan di hari pertama, sekarang udah tau jalan ke ruangan, udah kenal orang orang nya, dan udah megang kerjaan beneran yaitu budget, arsip, PR/PO, invoice. coba deh buka lagi papan jurnal kamu, baca catatan hari hari awal, kamu bakal liat udah sejauh itu loh. bulan depan katanya mulai bantu event, pameran, aktivasi, seru sih tapi bakal lebih rame juga, jadi inget yahh pelan pelan satu langkah dulu. kupon cerita masih berlaku kok kwkwk, jangan lupa kasi credit ke diri sendiri okayy. — Tama" },
+    { id: "bulan3", g: "time", tag: "Bulan 3", i: "fa-people-group", t: "Buka pas masuk bulan ketiga", at: monthAt(2), hint: "udah bisa dibuka", m: "masuk bulan ketigaaa!! kalo ngikutin gambaran kurikulum nya, ini fase kamu jalanin event dari awal sampe akhir, dari perizinan, koordinasi tim internal sama eksternal, sampe laporan dan dokumentasi. pasti bakal ada hari yang riweuh banget, dan itu normal yahh. tips dari aku: bikin checklist, catet siapa PIC nya, dan ga usah sungkan bilang 'aku cek dulu ya' daripada asal jawab kwkw. tarik napas, minum air, inget kamu ga sendirian, ada tim di sekeliling kamu. semangattttt yahhh! — Tama" },
+    { id: "setengah", g: "time", tag: "Setengah jalan", i: "fa-mountain", t: "Buka pas setengah jalan", at: monthAt(3), hint: "udah bisa dibuka", m: "setengah jalannn!! tiga bulan udah kamu lewatin ka saaa, wihhh :))) titik ini sering bikin capek sekaligus mikir 'aku beneran berkembang ga sih?', jawaban nya: iyaa. coba itung berapa hal yang dulu bikin bingung sekarang udah biasa bangett. sometimes progress is quiet, ga selalu keliatan tapi dia ada. kalo lagi jenuh gapapa kok, wajar di tengah tengah jalan, istirahat yang cukup, kasih hadiah kecil buat diri sendiri yahh. kalo mau cerita, kupon nya masih ada kwkwk. — Tama" },
+    { id: "terakhir", g: "time", tag: "Hari terakhir", i: "fa-graduation-cap", t: "Buka di hari terakhir magang", at: endDate.getTime(), hint: "udah bisa dibuka", m: "ka saaa... hari terakhirrr!! selamattt, kamu beneran ngelewatin semuanya :))) dari deg degan hari pertama, budget, PO, event, sampe akhirnya bisa jalan mandiri. apapun yang kejadian selama enam bulan ini, kamu udah jadi versi diri kamu yang lebih berpengalaman. jangan lupa pamitan sama orang orang baik di sana dan simpen kontak mereka yahh. selamat wisuda magang, im so so proud of uuu ka saaa. — Tama" },
+    { id: "capek", g: "mood", tag: "Kapan aja", i: "fa-battery-quarter", t: "Buka kalo lagi capek", at: 0, hint: "buka pas beneran lagi capek yahh, jangan sekarang kwkwk", m: "kalo kamu lagi baca ini berarti lagi capek yahh, gapapa banget kok. tarik napas dulu, minum air, duduk sebentar. capek itu tanda nya kamu udah berusaha, bukan tanda nya kamu kurang kuat. resting will always be a good answer kwkwk, sometimes resting is also part of moving forward, doing ur best doesnt always mean pushing urself until ure exhausted. pelan pelan aja ka saaa, kamu ga harus sempurna, cukup terus jalan. selamattt istirahat yahh :))) — Tama" },
+    { id: "salah", g: "mood", tag: "Kapan aja", i: "fa-heart-crack", t: "Buka kalo lagi ngerasa salah", at: 0, hint: "buat hari yang ga sesuai rencana", m: "kalo kamu baca ini, mungkin lagi ada yang salah atau ga sesuai rencana trus kepikiran terus yahh. tarik napas dulu. semua orang pernah salah kok, apalagi di tempat baru. salah tuh bukan berarti kamu ga cocok di sana, tapi berarti kamu lagi belajar. yang penting akuin, benerin, catet biar ga keulang, abis itu maafin diri sendiri juga yahh, kamu udah cukup keras sama diri sendiri hari ini. u dont have to be perfect to deserve being there, isokeyyy ka saa :))) — Tama" },
+    { id: "sepi", g: "mood", tag: "Kapan aja", i: "fa-hand-holding-heart", t: "Buka kalo lagi ngerasa sendirian", at: 0, hint: "buat hari yang berasa sepi", m: "kadang di tempat baru rasanya sepi, apalagi kalo belum ketemu orang yang klop, itu ga berarti ada yang salah sama kamu yahh. pelan pelan aja, ajak ngobrol satu orang dulu, makan siang bareng, atau nawarin bantuan kecil, lama lama pasti ada yang nyambung. dan kalo lagi butuh tempat cerita, kamu boleh cerita ke aku kok, ga usah mikir 'ganggu ga ya', aku ga pernah mempermasalahkan itu hehe. — Tama" },
+    { id: "pujian", g: "mood", tag: "Kapan aja", i: "fa-face-smile-beam", t: "Buka kalo abis dipuji", at: 0, hint: "buat hari yang lagi bagus", m: "nahhh kan!! aku bilang juga apa kwkwkw. jangan buru buru bilang 'ah cuma kebetulan' yahh. simpen pujian itu, catet di jurnal kamu, karena nanti di hari hari yang berat kamu butuh bukti kalo kamu emng bisa. terima aja, senyum, bilang makasih. u earned it ka saaa, jangan lupa kasi credit ke diri sendiri okayyy :))) — Tama" }
   ];
-  const whenFmt = new Intl.DateTimeFormat("id-ID", { weekday: "long", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit", timeZone: "Asia/Jakarta" });
+  const READ_KEY = "ksa-mail-read";
+  let readIds = [];
+  try { readIds = JSON.parse(localStorage.getItem(READ_KEY) || "[]"); } catch (e) { readIds = []; }
+  function saveRead() {
+    try { localStorage.setItem(READ_KEY, JSON.stringify(readIds)); } catch (e) {}
+  }
+  const whenFmt = new Intl.DateTimeFormat("id-ID", { weekday: "long", day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit", timeZone: "Asia/Jakarta" });
   const mailList = $("#mails");
+  const moodList = $("#mailsMood");
   MAILS.forEach(m => {
     const li = document.createElement("li");
     const b = document.createElement("button");
     b.type = "button";
     b.className = "mail";
-    b.innerHTML = '<span class="mail-ic"><i class="fa-solid"></i></span><span class="mail-tx"><b></b><small></small></span><span class="mail-st"><i class="fa-solid"></i></span>';
+    b.innerHTML = '<span class="mail-ic"><i class="fa-solid"></i></span><span class="mail-tx"><em class="mail-chip"></em><b></b><small></small></span><span class="mail-st"><i class="fa-solid"></i></span>';
     $(".mail-ic i", b).classList.add(m.i);
+    $(".mail-chip", b).textContent = m.tag;
     $("b", b).textContent = m.t;
     b.addEventListener("click", () => openMail(m));
     m.el = b;
     li.appendChild(b);
-    mailList.appendChild(li);
+    (m.g === "mood" ? moodList : mailList).appendChild(li);
   });
+  function leftText(at) {
+    const ms = at - Date.now();
+    const days = Math.floor(ms / 864e5);
+    if (days >= 1) return "tinggal " + days + " hari lagi";
+    const hrs = Math.floor(ms / HOUR);
+    return hrs >= 1 ? "tinggal " + hrs + " jam lagi" : "sebentar lagi";
+  }
   function refreshMails() {
     const now = Date.now();
+    let openTimed = 0;
+    let totalTimed = 0;
     MAILS.forEach(m => {
       const open = now >= m.at;
+      const read = readIds.indexOf(m.id) !== -1;
       const b = m.el;
+      if (m.g === "time") {
+        totalTimed++;
+        if (open) openTimed++;
+      }
       b.dataset.open = String(open);
-      $("small", b).textContent = !open ? "dikunci sampai " + whenFmt.format(new Date(m.at)) + " WIB" : b.classList.contains("read") ? "udah dibaca" : m.hint;
-      $(".mail-st i", b).className = "fa-solid " + (open ? "fa-envelope-open" : "fa-lock");
+      b.classList.toggle("read", read);
+      $("small", b).textContent = !open ? "dikunci sampai " + whenFmt.format(new Date(m.at)) + " WIB (" + leftText(m.at) + ")" : read ? "udah dibaca" : m.hint;
+      $(".mail-st i", b).className = "fa-solid " + (!open ? "fa-lock" : read ? "fa-envelope-open" : "fa-envelope");
     });
+    const stat = $("#mailStat");
+    if (stat) stat.textContent = openTimed + " dari " + totalTimed + " surat terjadwal udah kebuka, " + readIds.length + " dari " + MAILS.length + " udah kamu baca";
   }
   function openMail(m) {
     if (Date.now() < m.at) {
@@ -1395,18 +1458,22 @@ i.fa-solid,i.fa-brands{line-height:1}
       void m.el.offsetWidth;
       m.el.classList.add("shake");
       sfx.flip();
-      toast("belum waktunya, sabar yaa kwkw. kebuka " + whenFmt.format(new Date(m.at)) + " WIB");
+      toast("belum waktunya yahh, sabar dulu kwkwk. kebuka " + whenFmt.format(new Date(m.at)) + " WIB");
       return;
     }
     $("#sheetIc i").className = "fa-solid " + m.i;
     $("#sheetTitle").textContent = m.t;
     $("#sheetText").textContent = m.m;
     const tg = $("#sheetTag");
-    tg.textContent = "Surat";
-    tg.className = "tag rare";
+    tg.textContent = m.tag;
+    tg.className = "tag " + (m.g === "mood" ? "buff" : "rare");
     openOverlay($("#sheet"), "#sheetClose");
     sfx.pop();
-    m.el.classList.add("read");
+    if (readIds.indexOf(m.id) === -1) {
+      readIds.push(m.id);
+      saveRead();
+      burstAt(m.el, 26, .5);
+    }
     refreshMails();
   }
   refreshMails();
@@ -1514,7 +1581,7 @@ i.fa-solid,i.fa-brands{line-height:1}
     g.fillText("Berlaku mulai " + fullDate, 540, 1152);
     g.font = "800 40px " + B;
     g.fillStyle = "#f8f3ff";
-    g.fillText("dari Dias, buat Ka Saa", 540, 1278);
+    g.fillText("dari Tama, buat Ka Saa", 540, 1278);
     g.font = "600 28px " + B;
     g.fillStyle = "#dcc9ff";
     g.fillText("dibuat dari orang yang kamu baru kenal dari Jakarta", 540, 1324);
@@ -1588,16 +1655,16 @@ i.fa-solid,i.fa-brands{line-height:1}
   const FORTUNE = {
     colors: ["ungu", "ungu muda", "ungu tua", "lilac", "ungu (yang mana aja, pokoknya ungu)"],
     advice: [
-      "hari ini boleh salah dikit, yang penting nanya.",
-      "senyum duluan, nanti orang lain yang bingung mau bales apa kwkw.",
-      "catet apa yang dikasih tau, biar ga usah nanya dua kali. atau nanya dua kali juga gapapa.",
-      "makan siang jangan di-skip, kerjaan ga akan lari kok.",
-      "kalo deg-degan, tarik napas empat detik, tahan, keluarin. sok tenang aja dulu.",
-      "kamu ga harus langsung jago. lagi belajar itu sah.",
-      "kalo ada yang nawarin bantuan, terima aja yaa.",
+      "hari ini boleh salah dikit yahh, yang penting nanya.",
+      "senyum duluan aja, nanti orang lain yang bingung mau bales apa kwkwk.",
+      "catet apa yang dikasih tau biar ga usah nanya dua kali, atau nanya dua kali juga gapapa kok.",
+      "makan siang jangan di skip yahh, kerjaan ga bakal lari kok.",
+      "kalo deg degan, tarik napas empat detik, tahan, keluarin, sok tenang aja dulu kwkw.",
+      "kamu ga harus langsung jago, lagi belajar itu sah kok.",
+      "kalo ada yang nawarin bantuan, terima aja yahh.",
       "tugas utama kamu hari ini cuma satu: pulang bawa cerita.",
-      "istirahat itu bagian dari kerja juga, serius.",
-      "sometimes courage is just doing it while ur heart is still beating a little faster."
+      "resting will always be a good answer, istirahat itu bagian dari kerja juga serius.",
+      "sometimes courage is just doing it while ur heart is still beating a little faster :)))"
     ]
   };
   function todayFortune() {
@@ -1701,14 +1768,14 @@ i.fa-solid,i.fa-brands{line-height:1}
     });
     const n = full.length;
     const msg = $("#bingoMsg");
-    if (marks.size === 9) msg.textContent = "FULL BINGO! hari ini kamu legend. wajib cerita ke Dias kwkw";
-    else if (n === 1) msg.textContent = "BINGO! satu garis kelar. kabarin Dias yaa, ada kupon cerita nunggu kwkw";
-    else if (n > 1) msg.textContent = "BINGO x" + n + "! kamu emang jago hari ini";
+    if (marks.size === 9) msg.textContent = "FULL BINGOO! hari ini kamu legend bangett, wajib cerita ke Tama kwkwk";
+    else if (n === 1) msg.textContent = "BINGOO! satu garis kelar. kabarin Tama yahh, ada kupon cerita nungguin kwkwk";
+    else if (n > 1) msg.textContent = "BINGOO x" + n + "! kamu emng jago bangett hari ini";
     else msg.textContent = "belum ada garis, santai aja kwkw (" + (marks.size - 1) + "/8 kejadian)";
     $("#bingoWa").hidden = !(n >= 1 && CONFIG.WA_NUMBER);
     if (n >= 1 && CONFIG.WA_NUMBER) {
       const dn = workdayNumber(new Date());
-      const text = dn > 0 ? "Dias, bingo hari ke-" + dn + " ku udah jadi nih!" : CONFIG.WA_BINGO_TEXT;
+      const text = dn > 0 ? "Tama, bingo hari ke-" + dn + " ku udah jadi nih!" : CONFIG.WA_BINGO_TEXT;
       $("#bingoWa").href = "https://wa.me/" + CONFIG.WA_NUMBER.replace(/\D/g, "") + "?text=" + encodeURIComponent(text);
     }
   }
@@ -1784,11 +1851,15 @@ i.fa-solid,i.fa-brands{line-height:1}
   const journalStatus = $("#journalStatus");
   const journalNotes = $("#journalNotes");
   const journalPreview = $("#journalPreview");
+  const journalPick = $("#journalPick");
+  const journalTodayBtn = $("#journalTodayBtn");
   const JOURNAL_PREFIX = "ksa-journal:";
+  let journalSelected = "";
+  let journalDirty = false;
   function todayKeyJakarta() { return new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Jakarta" }).format(new Date()); }
   function journalDayLabel(dateStr) {
     const d = new Date(dateStr + "T00:00:00");
-    return new Intl.DateTimeFormat("id-ID", { weekday: "long", day: "numeric", month: "long", timeZone: "Asia/Jakarta" }).format(d);
+    return new Intl.DateTimeFormat("id-ID", { weekday: "long", day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Jakarta" }).format(d);
   }
   function journalGet(key) {
     try { return localStorage.getItem(key) || ""; } catch (e) { return ""; }
@@ -1810,7 +1881,7 @@ i.fa-solid,i.fa-brands{line-height:1}
       label.textContent = "Ada perubahan, klik Simpan";
     } else {
       icon.className = "fa-solid fa-circle-info";
-      label.textContent = "Belum ada catatan hari ini";
+      label.textContent = "Belum ada catatan di tanggal ini";
     }
   }
   function renderJournalBoard() {
@@ -1845,35 +1916,68 @@ i.fa-solid,i.fa-brands{line-height:1}
     }
   }
   function renderJournalPreview() {
-    const key = todayKeyJakarta();
+    const key = journalSelected;
+    const isToday = key === todayKeyJakarta();
     const val = journalGet(JOURNAL_PREFIX + key);
     journalPreview.innerHTML = "";
     if (val && val.trim()) {
       const note = document.createElement("div");
-      note.className = "journal-note today";
-      note.innerHTML = '<span class="pin"></span><b>Hari ini</b><span></span>';
+      note.className = "journal-note" + (isToday ? " today" : "");
+      note.innerHTML = '<span class="pin"></span><b></b><span></span>';
+      $("b", note).textContent = isToday ? "Hari ini" : journalDayLabel(key);
       $("span:last-child", note).textContent = val;
       journalPreview.appendChild(note);
     } else {
       const empty = document.createElement("p");
       empty.className = "journal-note-empty";
-      empty.textContent = "belum ada catatan hari ini, tulis dulu di atas yuk";
+      empty.textContent = isToday ? "belum ada catatan hari ini, tulis dulu di atas yuk" : "belum ada catatan di tanggal ini, tulis dulu di atas yuk";
       journalPreview.appendChild(empty);
     }
   }
-  function initJournal() {
-    const key = todayKeyJakarta();
-    journalDateEl.textContent = "Hari ini, " + journalDayLabel(key);
+  function flushJournal() {
+    if (!journalDirty || !journalSelected) return;
+    journalSet(JOURNAL_PREFIX + journalSelected, journalInput.value);
+    journalDirty = false;
+  }
+  function selectJournalDate(key) {
+    const today = todayKeyJakarta();
+    if (!key || key > today) key = today;
+    flushJournal();
+    journalSelected = key;
+    journalPick.max = today;
+    journalPick.value = key;
+    journalDateEl.textContent = (key === today ? "Hari ini, " : "") + journalDayLabel(key);
     const val = journalGet(JOURNAL_PREFIX + key);
     journalInput.value = val;
+    journalInput.placeholder = key === today ? "hari ini gimana? tulis aja sebebasnya..." : "hari itu gimana? tulis aja sebebasnya...";
+    journalDirty = false;
     setJournalBadge(val ? "saved" : "empty");
     renderJournalPreview();
+    renderJournalBoard();
   }
-  journalInput.addEventListener("input", () => setJournalBadge("unsaved"));
+  function initJournal() {
+    const today = todayKeyJakarta();
+    selectJournalDate(journalSelected && journalSelected <= today ? journalSelected : today);
+  }
+  journalInput.addEventListener("input", () => {
+    journalDirty = true;
+    setJournalBadge("unsaved");
+  });
+  journalPick.addEventListener("change", () => {
+    const today = todayKeyJakarta();
+    if (journalPick.value && journalPick.value > today) toast("belum bisa nulis buat hari yang belum kejadian yaa kwkw");
+    selectJournalDate(journalPick.value);
+    sfx.flip();
+  });
+  journalTodayBtn.addEventListener("click", () => {
+    selectJournalDate(todayKeyJakarta());
+    sfx.flip();
+  });
   journalSave.addEventListener("click", () => {
-    const key = JOURNAL_PREFIX + todayKeyJakarta();
+    const key = JOURNAL_PREFIX + journalSelected;
     if (journalSet(key, journalInput.value)) {
-      setJournalBadge(journalInput.value ? "saved" : "empty");
+      journalDirty = false;
+      setJournalBadge(journalInput.value.trim() ? "saved" : "empty");
       sfx.pop();
       burstAt(journalSave, 20, .4);
       renderJournalPreview();
@@ -1884,6 +1988,7 @@ i.fa-solid,i.fa-brands{line-height:1}
       journalStatus.querySelector("span").textContent = "gagal nyimpen, coba lagi yaa";
     }
   });
+  addEventListener("pagehide", flushJournal);
 
   const skcWrap = $("#skcWrap");
   const skcRing = $("#skcRing");
