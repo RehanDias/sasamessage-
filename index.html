@@ -770,7 +770,7 @@ i.fa-solid,i.fa-brands{line-height:1}
     WA_BINGO_TEXT: "Tama, bingo hari pertamaku udah jadi nih!",
     WA_GAME_TEXT: "Tama, aku baru menang mini game Sat-Set Tugas nih kwkw",
     PHOTO: "",
-    MUSIC: "https://raw.githubusercontent.com/RehanTama/sasamessage-/main/yettocome.mp3",
+    MUSIC: "https://raw.githubusercontent.com/RehanDias/sasamessage-/main/yettocome.mp3",
     LETTER_HOURS: { pagi: -3, minggu: 120 }
   };
 
@@ -877,7 +877,13 @@ i.fa-solid,i.fa-brands{line-height:1}
     if (soundOn) { audio(); sfx.pop(); }
     if (bgm) {
       if (soundOn) {
-        bgm.play().then(fadeInBgm).catch(() => {});
+        bgm.play().then(fadeInBgm).catch(() => {
+          soundOn = false;
+          soundBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
+          soundBtn.setAttribute("aria-pressed", "false");
+          soundBtn.setAttribute("aria-label", "Nyalakan suara");
+          toast("musiknya gagal dimuat, coba lagi yaa");
+        });
       } else {
         clearInterval(fadeTimer);
         bgm.pause();
